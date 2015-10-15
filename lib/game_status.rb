@@ -16,8 +16,8 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
-  WIN_COMBINATIONS.detect do |win|
-    win.all? {|choice| board[choice] == 'X'} || win.all? {|choice| board[choice] == 'O'}
+  WIN_COMBINATIONS.detect do |combo|
+    combo.all? {|choice| board[choice] == "X"} || combo.all? {|choice| board[choice] == "O"}
   end
 end
 
@@ -27,16 +27,12 @@ def full?(board)
 end
 
 def draw?(board)
-  unless won?(board)
-    return true
+  if (full?(board) && !won?(board)) then true
   end
 end
 
 def over?(board)
-  unless won?(board) || full?(board)
-    return false
-  else
-    return true
+  if won?(board) || draw?(board) then true
   end
 end
 
