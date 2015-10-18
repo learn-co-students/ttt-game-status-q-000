@@ -24,7 +24,9 @@ describe "./lib/game_status.rb" do
     end
 
     it 'returns false for a draw' do
-      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+      board = ["X", "O", "X",
+               "O", "X", "X",
+               "O", "X", "O"]
 
       expect(won?(board)).to be_falsey
     end
@@ -120,7 +122,9 @@ describe "./lib/game_status.rb" do
     end
 
     it 'returns true for a won game' do
-      board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
+      board = ["X", "O", "X", 
+               "O", "X", "X", 
+               "O", "O", "X"]
 
       expect(over?(board)).to be_truthy
     end
