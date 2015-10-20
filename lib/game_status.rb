@@ -38,7 +38,7 @@ end
 
 def winner(board)
   if won?(board)
-   board[won?(board)[0]]
+   board[won?(board)[0]] # return the value of index 0 of the array returned from the won? method
   else
     return nil
   end  
