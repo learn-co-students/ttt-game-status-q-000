@@ -56,9 +56,13 @@ def over?(board)
 end
 
 def winner(board)
+  #if won? is true
   if won?(board)
-    won_array_first_item = won?(board)[0]
-    board[won_array_first_item]
+    #won? returns win_combo array
+    #set var to win_combo array's 1st index for clarity
+    win_combo_first_item = won?(board)[0]
+    #return value ("X" or "O") at that index in board
+    board[win_combo_first_item]
   else
     return nil
   end
