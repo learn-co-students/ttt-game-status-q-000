@@ -60,7 +60,7 @@ def over?(board)
   end
 end
 #won?(board) == false
-#return nil if !(board[won?(board)[0]] == "X" || "O")
+#return nil if !(board[won?(board)[0]] == "X" || !(board[won?(board)[0]] == "O")
 # ??access element from WIN_COMBINATIONS nested array
 # method does not output return values
 def winner(board)
