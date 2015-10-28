@@ -23,8 +23,8 @@ def won?(board)
           return WIN_COMBINATIONS[i]
         elsif board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
           return WIN_COMBINATIONS[i]
-        else
-          false
+        # else
+        #   false
         end
       i += 1
     end
@@ -43,16 +43,7 @@ def over?(board)
 end
 
 def winner(board)
-    i = 0
-    while i < 8
-      win_combination = WIN_COMBINATIONS[i]
-        if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X"
-          return "X"
-        elsif board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
-          return "O"
-        else
-          nil
-        end
-      i += 1
-    end
+  if identifier = won?(board)
+    board[identifier.first]
+  end
 end
