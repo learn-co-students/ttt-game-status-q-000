@@ -1,0 +1,35 @@
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/null_relation.rb	/^    def count(*)$/;"	f	class:ActiveRecord.NullRelation
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/relation/calculations.rb	/^    def count(column_name = nil, options = {})$/;"	f	class:ActiveRecord.Calculations
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/collection_association.rb	/^      def count(column_name = nil, count_options = {})$/;"	f	class:ActiveRecord.Associations
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/collection_proxy.rb	/^      def count(column_name = nil, options = {})$/;"	f	class:ActiveRecord.Associations.CollectionProxy
+count_records	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/has_many_association.rb	/^        def count_records$/;"	f	class:ActiveRecord.Associations.HasManyAssociation
+counter_must_be_updated_by_has_many?	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/has_many_association.rb	/^        def counter_must_be_updated_by_has_many?(reflection)$/;"	f	class:ActiveRecord.Associations
+counter_cache_available_in_memory?	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/belongs_to_association.rb	/^        def counter_cache_available_in_memory?(counter_cache_name)$/;"	f	class:ActiveRecord.Associations.BelongsToAssociation
+counter_cache_column	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/reflection.rb	/^      def counter_cache_column$/;"	f	class:ActiveRecord.AssociationReflection
+count_by_sql	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/querying.rb	/^    def count_by_sql(sql)$/;"	f	class:ActiveRecord.Querying
+count	code/example/.bundle/gems/minitest-5.7.0/test/minitest/test_minitest_reporter.rb	/^    def reporter.count$/;"	F	class:TestMinitestReporter.new_composite_reporter
+count_object_space_documents	code/example/.bundle/gems/nokogiri-1.6.6.2/test/test_memory_leak.rb	/^  def count_object_space_documents$/;"	f	class:TestMemoryLeak
+count	code/example/.bundle/gems/activemodel-4.2.3/lib/active_model/errors.rb	/^    def count$/;"	f	class:ActiveModel.Errors
+count	code/example/.bundle/gems/mime-types-2.6.1/lib/mime/types.rb	/^  def count$/;"	f	class:MIME
+count	code/example/.bundle/gems/mime-types-2.6.1/lib/mime/types.rb	/^    def count$/;"	f
+count_objects	code/example/.bundle/gems/mime-types-2.6.1/support/benchmarks/object_counts.rb	/^    def count_objects$/;"	f	class:Benchmarks.ObjectCounts
+country_codes	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/ruby_data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.RubyDataSource
+country_codes	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.DataSource
+country	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb	/^      def country(code, name, &block)$/;"	f	class:TZInfo.CountryIndexDefinition.ClassMethods
+countries	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb	/^      def countries$/;"	f	class:TZInfo.CountryIndexDefinition.ClassMethods
+country_codes	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.ZoneinfoDataSource
+counter	code/example/.bundle/gems/sass-3.4.16/lib/sass/script/functions.rb	/^    def counter(*args)$/;"	f
+counters	code/example/.bundle/gems/sass-3.4.16/lib/sass/script/functions.rb	/^    def counters(*args)$/;"	f
+count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def self.count$/;"	F	class:Rake.CpuCounter
+count_with_default	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_with_default(default=4)$/;"	f	class:Rake.CpuCounter
+count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^        def count$/;"	f	class:Rake.CpuCounter
+count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count$/;"	f
+count_via_java_runtime	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_java_runtime$/;"	f
+count_via_win32	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_win32$/;"	f
+count_via_cpuinfo	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_cpuinfo$/;"	f
+count_via_hwprefs_thread_count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_hwprefs_thread_count$/;"	f
+count_via_hwprefs_cpu_count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_hwprefs_cpu_count$/;"	f
+count_via_sysctl	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_sysctl$/;"	f
+count	code/example/.bundle/gems/rake-10.4.2/test/test_rake_cpu_counter.rb	/^        def count; 8; end$/;"	f	class:TestClassMethod.test_count
+count_description	code/example/.bundle/gems/rails-dom-testing-1.0.6/lib/rails/dom/testing/assertions/selector_assertions/count_describable.rb	/^    def count_description(min, max, count) #:nodoc:$/;"	f	class:CountDescripable
+country_code	code/example/.bundle/gems/activesupport-4.2.3/lib/active_support/number_helper/number_to_phone_converter.rb	/^        def country_code(code)$/;"	f	class:ActiveSupport.NumberHelper.NumberToPhoneConverter
