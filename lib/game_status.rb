@@ -3,7 +3,6 @@ def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
 end
 
-# Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -12,8 +11,48 @@ WIN_COMBINATIONS = [
   [1,4,7],
   [2,5,8],
   [0,4,8],
-  [2,4,6]
+  [6,4,2],
 ]
+
+def display_board(board)
+  dash = "-" * 11
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts dash
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts dash
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
+
+def move(board, position, char="X")
+  board[position.to_i-1] = char
+end
+
+def position_taken?(board, position)
+  board[position] != " " && board[position] != ""
+end
+
+def valid_move?(board, position)
+  position.to_i.between?(1,9) && !position_taken?(board, position.to_i-1)
+end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  if valid_move?(board, input)
+    move(board, input)
+  else
+    turn(board)
+  end
+  display_board(board)
+end
+
+def turn_count(board)
+  board.join('').scan(/[XO]/).count
+end
+
+def current_player(board)
+  turn_count(board).even? ? "X" : "O"
+end
 
 def won?(board)
   return false if board.all? {|x| x == " " || x.nil?}
@@ -37,26 +76,17 @@ def won?(board)
 end
 
 def full?(board)
-  return true if board.all? {|x| x == "X" || x == "O"} && !won?(board)
-  false
+  turn_count(board) == 9 && !won?(board)
 end
 
 def draw?(board)
-  return true if !won?(board) && full?(board)
-  false
+  full?(board) && !won?(board)
 end
 
 def over?(board)
-  return true if won?(board) || draw?(board) || full?(board)
-  false
+  won?(board) || draw?(board)
 end
 
 def winner(board)
   won?(board) ? board[won?(board)[0]] : nil
-end
-
-if __FILE__ == $0 
-  board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
-
-  puts full?(board)
 end
