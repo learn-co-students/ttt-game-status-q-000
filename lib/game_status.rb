@@ -16,15 +16,55 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
-  count_check = -1
- WIN_COMBINATIONS.each do |combo|
-   count_check += 1
+  win_combo = nil
+  WIN_COMBINATIONS.each do |combo|
     if board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X"
-      return combo
+      win_combo = combo
     elsif board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O"
-      return combo
-    elsif count_check > 8
-      return false
+      win_combo = combo
     end
   end
+  win_combo
+end
+
+def full?(board)
+  full_board = nil
+  board.all? do |space|
+    if space == "X" || space == "O"
+      full_board = true
+    end
+  end
+  if board.include?(" ")
+    full_board = nil
+  end
+  full_board
+end
+
+def draw?(board)
+  draw_game = nil
+  if full?(board) && !won?(board)
+    draw_game = true
+  else
+    draw_game = nil
+  end
+  draw_game
+end
+
+def over?(board)
+  game_over = nil
+  if draw?(board) || won?(board)
+    game_over = true
+  else
+    game_over = nil
+  end
+  game_over
+end
+
+def winner(board)
+  champ = nil
+  if won?(board)
+    tokencheck = won?(board)
+    champ = board[tokencheck[0]]
+  end
+  champ
 end
