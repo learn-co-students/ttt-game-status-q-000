@@ -19,21 +19,29 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   WIN_COMBINATIONS.detect do |line|
-    line.all?{|index| board[index] == "X" } || line.all?{|index| board[index] == "O"}
+    line.all?{|i| board[i] == "X" } || line.all?{|i| board[i] == "O"}
   end
 end
 
 def full?(board)
-  board.all?{|index| board[index] == "X" || board[index] == "O"}
+  board.all?{|position| position == "X" || position == "O"}
 end
 
 def draw?(board)
-  won?(board) == false && full?(board)
+  !won?(board) && full?(board)
 end
 
 def over?(board)
   won?(board) || draw?(board)
   end
+
+def winner(board)
+  if won?(board)
+  line = won?(board)
+  board[line[0]]
+  end
+end
+
 
 
 
