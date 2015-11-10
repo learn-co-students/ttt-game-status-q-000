@@ -10,10 +10,10 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.find do |win_comb|
-    x_win = win_comb.all? { |pos| board[pos] == "X" }
-    o_win = win_comb.all? { |pos| board[pos] == "O" }
-    return win_comb if x_win || o_win
+  WIN_COMBINATIONS.find do |win_combo|
+    x_wins = win_combo.all? { |pos| board[pos] == "X" }
+    o_wins = win_combo.all? { |pos| board[pos] == "O" }
+    return win_combo if x_wins || o_wins
   end
 end
 
