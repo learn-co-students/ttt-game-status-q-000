@@ -18,7 +18,7 @@ def won?(board)
 end
 
 def full?(board)
- board.all? {|pos| pos != " "} 
+ board.all? { |pos| pos != " " } 
 end
 
 def draw?(board)
@@ -26,7 +26,7 @@ def draw?(board)
 end
 
 def over?(board)
-  board.all? {|pos| pos == "X" || pos == "O"}
+  board.all? { |pos| pos == "X" || pos == "O" }
 end
 
 def winner(board)
