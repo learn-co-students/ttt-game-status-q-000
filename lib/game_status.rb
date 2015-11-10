@@ -18,11 +18,11 @@ def won?(board)
 end
 
 def full?(board)
- board.all? {|pos| pos == "X" || pos == "O"} 
+ board.all? {|pos| pos != " "} 
 end
 
 def draw?(board)
-  board.full? && !won?(board)
+  full?(board) && !won?(board)
 end
 
 def over?(board)
