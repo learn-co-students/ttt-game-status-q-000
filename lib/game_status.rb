@@ -43,7 +43,7 @@ def full?(board)
   if draw?(board)
     true
   end
-   end
+  end
 end
 
 def draw?(board)
