@@ -1,8 +1,3 @@
-# Helper Method
-def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
-end
-
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -15,24 +10,19 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
+  indexes = Array.new
   if WIN_COMBINATIONS.any? do |combination|
+    indexes = combination
     board[combination[0]] == "X" && board[combination[1]] == "X" && board[combination[2]] == "X" || board[combination[0]] == "O" && board[combination[1]] == "O" && board[combination[2]] == "O"
   end
-  return combination
+  return indexes
 else
   return false
 end
 end
 
-
-
-
 def full?(board)
-  if position_taken?(board,location) == true
-    return true
-  else
-    return false
-  end
+  board.all? {|position| position == "X" || position == "O"}
 end
 
 def draw?(board)
@@ -46,12 +36,27 @@ def draw?(board)
   end
 end
 
-    def over?(board)
-      if won?(board) == true || draw?(board) == true || full?(board) == true
-        return true
-      else
-        return false
-      end
+def over?(board)
+  if won?(board) == true || draw?(board) == true || full?(board) == true
+    return true
+   else
+    return false
+   end
+end
+
+def winner(board)
+  if won?(board) == false
+      return nil
     end
+  won?(board).each do |position|
+    if board[position] == "X"
+      return "X"
+    else board[position] == "O"
+      return "O"
+    end
+  end
+end
+
+
 
 
