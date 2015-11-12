@@ -41,17 +41,7 @@ def over?(board)
 end
 
 def winner(board)
-  puts won?(board)
-  puts "test1"
   if !won?(board).nil?
-    puts board[won?(board)[0]]
-    puts "test"
-    board[won?(board)[0]]
+   board[won?(board)[0]]
   end
 end
-won?(board)
-full?(board)
-draw?(board)
-over?(board)
-winner(board)
-# puts won?(board)
