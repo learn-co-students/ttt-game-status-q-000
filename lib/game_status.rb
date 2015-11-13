@@ -18,21 +18,21 @@ WIN_COMBINATIONS = [
 
 def won?(board)
 
-    if board[WIN_COMBINATIONS[0][0]] == "X"  && board[WIN_COMBINATIONS[0][1]] == "X"  && board[WIN_COMBINATIONS[0][2]] == "X"
+    if ["O", "X"].include?(board[WIN_COMBINATIONS[0][0]]) && board[WIN_COMBINATIONS[0][0]] ==  board[WIN_COMBINATIONS[0][1]] && board[WIN_COMBINATIONS[0][0]] ==  board[WIN_COMBINATIONS[0][2]]
      WIN_COMBINATIONS[0]
-    elsif board[WIN_COMBINATIONS[1][0]] == "X"  && board[WIN_COMBINATIONS[1][1]] == "X"  && board[WIN_COMBINATIONS[1][2]] == "X"
+      elsif ["O", "X"].include?(board[WIN_COMBINATIONS[1][0]]) && board[WIN_COMBINATIONS[1][0]] ==  board[WIN_COMBINATIONS[1][1]] && board[WIN_COMBINATIONS[1][0]] ==  board[WIN_COMBINATIONS[1][2]]
      WIN_COMBINATIONS[1]
-    elsif board[WIN_COMBINATIONS[2][0]] == "X"  && board[WIN_COMBINATIONS[2][1]] == "X"  && board[WIN_COMBINATIONS[2][2]] == "X"
+    elsif ["O", "X"].include?(board[WIN_COMBINATIONS[2][0]]) && board[WIN_COMBINATIONS[2][0]] ==  board[WIN_COMBINATIONS[2][1]] && board[WIN_COMBINATIONS[2][0]] ==  board[WIN_COMBINATIONS[2][2]]
      WIN_COMBINATIONS[2]
-elsif board[WIN_COMBINATIONS[3][0]] ==  "O" && board[WIN_COMBINATIONS[3][1]] == "O"  && board[WIN_COMBINATIONS[3][2]] ==  "O"
+elsif ["O", "X"].include?(board[WIN_COMBINATIONS[3][0]]) && board[WIN_COMBINATIONS[3][0]] ==  board[WIN_COMBINATIONS[3][1]] && board[WIN_COMBINATIONS[3][0]] ==  board[WIN_COMBINATIONS[3][2]]
      WIN_COMBINATIONS[3]
-    elsif board[WIN_COMBINATIONS[4][0]] == "O"  && board[WIN_COMBINATIONS[4][1]] == "O"  && board[WIN_COMBINATIONS[4][2]] == "O"
+    elsif ["O", "X"].include?(board[WIN_COMBINATIONS[4][0]]) && board[WIN_COMBINATIONS[4][0]] ==  board[WIN_COMBINATIONS[4][1]] && board[WIN_COMBINATIONS[4][0]] ==  board[WIN_COMBINATIONS[4][2]]
      WIN_COMBINATIONS[4]
-    elsif board[WIN_COMBINATIONS[5][0]] == "O"  && board[WIN_COMBINATIONS[5][1]] == "O"  && board[WIN_COMBINATIONS[5][2]] == "O"
+    elsif ["O", "X"].include?(board[WIN_COMBINATIONS[5][0]]) && board[WIN_COMBINATIONS[5][0]] ==  board[WIN_COMBINATIONS[5][1]] && board[WIN_COMBINATIONS[5][0]] ==  board[WIN_COMBINATIONS[5][2]]
      WIN_COMBINATIONS[5]
-elsif board[WIN_COMBINATIONS[6][0]] == "X"  && board[WIN_COMBINATIONS[6][1]] == "X"  && board[WIN_COMBINATIONS[6][2]] == "X"
+elsif ["O", "X"].include?(board[WIN_COMBINATIONS[6][0]]) && board[WIN_COMBINATIONS[6][0]] ==  board[WIN_COMBINATIONS[6][1]] && board[WIN_COMBINATIONS[6][0]] ==  board[WIN_COMBINATIONS[6][2]]
      WIN_COMBINATIONS[6]
-    elsif board[WIN_COMBINATIONS[7][0]] == "O"  && board[WIN_COMBINATIONS[7][1]] == "O"  && board[WIN_COMBINATIONS[7][2]] == "O"
+    elsif ["O", "X"].include?(board[WIN_COMBINATIONS[7][0]]) && board[WIN_COMBINATIONS[7][0]] ==  board[WIN_COMBINATIONS[7][1]] && board[WIN_COMBINATIONS[7][0]] ==  board[WIN_COMBINATIONS[7][2]]
      WIN_COMBINATIONS[7]
   else
       false
