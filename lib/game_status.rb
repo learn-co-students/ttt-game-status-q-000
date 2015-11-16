@@ -27,9 +27,15 @@ def full?(board)
 end
 
 def draw?(board)
-  if full?(board) == true && won?(board) == false
-    return true
-  else
-    return false
+  !won?(board) && full?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board) || full?(board)
+end
+
+def winner(board)
+  if letter_win = won?(board)
+    board[letter_win.first]
   end
 end
