@@ -4,11 +4,14 @@ def position_taken?(board, location)
 end
 
 def won?(board)
-   WIN_COMBINATIONS.find do |win_index|
-   return win_index if win_index.all? do |position| board[position] == "X" end
-   return win_index if win_index.all? do |position| board[position] == "O" end
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
   end
 end
+
+
 
 def full?(board)
   !(board.include?(" "))
@@ -25,10 +28,8 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board)
-  win = won?(board)
-  return "X" if win.all? do |win_x| board[win_x] == "X" end
-  return "O" if win.all? do |win_o| board[win_o] == "O" end
+  won?(board).all? do |win|
+    board[win] == "X" || board[win] == "O"
   end
 end
 
