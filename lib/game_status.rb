@@ -46,7 +46,6 @@ end
 
 def draw?(board)
   if full?(board) == true && won?(board) == false
-    $winner = nil
     true
   end
 end
