@@ -33,7 +33,7 @@ def draw?(board)
   return false if won?(board).class == Array
   return true if won?(board) == false && full?(board) == true
 else
-  false
+  true
 end
 
 def over?(board)
