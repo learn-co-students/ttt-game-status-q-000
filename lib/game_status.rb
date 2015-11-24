@@ -37,8 +37,7 @@ end
 end
 
 def full?(board)
-  full = board.include?(" ")
-  !full
+  board.all?{|token| token == "X" || token == "O"}
 end
 
 def draw?(board)
