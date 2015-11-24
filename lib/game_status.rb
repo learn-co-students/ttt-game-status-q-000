@@ -18,15 +18,12 @@ WIN_COMBINATIONS = [
 board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
 
 def won?(board)
-  @winner = nil
   array = []
   WIN_COMBINATIONS.each do |win_comb|
   if board[win_comb[0]] == "X" && board[win_comb[1]] == "X" && board[win_comb[2]] == "X"
-    @winner = "X"
     array = win_comb
     break
   elsif board[win_comb[0]] == "O" && board[win_comb[1]] == "O" && board[win_comb[2]] == "O"
-    @winner = "O"
     array = win_comb
     break
   else
@@ -53,8 +50,8 @@ def over?(board)
 end
 
 def winner(board)
-  over?(board)
-    @winner
+  if win_combo = won?(board)
+    board[win_combo.first]
+  end
 end
 
-won?(board)
