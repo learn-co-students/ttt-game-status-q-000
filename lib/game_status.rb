@@ -44,3 +44,31 @@ end
 def winner(board)
   return board[won?(board).first] if won?(board).class == Array
 end
+
+def won?(board)
+  WIN_COMBINATIONS.detect do |ttt|
+    board[ttt[0]] == board[ttt[1]] && board[ttt[1]] == board[ttt[2]] &&
+    position_taken?(board, ttt[0])
+    end
+  end
+
+def full?(board)
+  board.all? { |token| token == "X" || token == "O"}
+end
+
+def draw?(board)
+  return false if full?(board) == false
+  return false if won?(board).class == Array
+  return true if won?(board) == false && full?(board) == true
+else
+  true
+end
+
+def over?(board)
+  return false if full?(board) == false
+  won?(board) || full?(board) || draw?(board)
+end
+
+def winner(board)
+  return board[won?(board).first] if won?(board).class == Array
+end
