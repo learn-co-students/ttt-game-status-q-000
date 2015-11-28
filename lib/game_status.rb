@@ -37,14 +37,14 @@ def full?(board)
 end
 end
 
-#draw? method
+#draw?
 def draw?(board)
-  !won?(board) ? true : false
+  !won?(board) && full?(board) ? true : false
 end
 
-#over? method
+#over?
 def over?(board)
-  won?(board) || !draw?(board) || full?(board) ? true : false
+won?(board) || draw?(board) || full?(board)
 end
 
 #winner? method
