@@ -4,7 +4,6 @@ def position_taken?(board, location)
 end
 
 # Define your WIN_COMBINATIONS constant
-
 WIN_COMBINATIONS = [
     [0, 1, 2], # top_row_win
     [3, 4, 5], # middle_row_win
@@ -15,6 +14,7 @@ WIN_COMBINATIONS = [
     [0, 4, 8], # left_diag_win
     [2, 4, 6]  # right_diag_win
   ]
+
 # this method passes
 def won?(board)
   WIN_COMBINATIONS.detect do |win_combo|
@@ -22,37 +22,40 @@ def won?(board)
   end
 end
 
-# working on it
+# this method passes
 def full?(board)
-  #board.detect {|full| full.is_a?("X")} || board.detect {|full| full.is_a?("O")}
-  #board.any?{|position| position_taken(location) == "X"}
-  #board.inclde?("X")
-  #board.include?("O")
-  board.any? {|filled| filled == "X"} && board.any? {|filled| filled == ""}
-  #board.each {|filled| filled ? true : false}
+  board.all? do |full|
+    full == "X" || full == "O"
+  end
 end
 
+# this method passes
 def draw?(board)
-  #board.map{|cell| cell.value}.none_empty?
+  if won?(board)
+    return false
+  else
+    board.all? do |draw|
+      draw == "X" || draw == "O"
+    end
+  end
 end
 
+# this method passes
 def over?(board)
-  #return :winner if winner?
-  #return :draw if draw?
-  #false
+  return :won? if won?(board)
+  return :draw? if draw?(board)
+  false
 end
 
+# this method passes
 def winner(board)
-  #(0..2).each do |i|
-  #  if board[i][0] == board[i][1] && board[i][1] == board[i][2]
-  #    return board[i][0] unless board[i][0] == " "
-
-  #  elsif board[0][i] == board[1][i] && board[1][i] == board[2][i]
-  #    return board[0][i] unless board[0][i] == " "
-  #  end
-  #end
-  #  if ( board[0][0] == board[1][1] && board[1][1] == board[2][2] ) ||
-  #     ( board[0][2] == board[1][1] && board[1][1] == board[2][0] )
-  #  return board[1][1] unless board[1][1] == " "
-  #  end
+  if won?(board)
+    if board[won?(board)[0]]  == "X"
+       return "X"
+    elsif board[won?(board)[0]] == "O"
+       return "O"
+    end
+ else
+   return nil
+ end
 end
