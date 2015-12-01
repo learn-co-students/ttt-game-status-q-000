@@ -4,18 +4,43 @@ def position_taken?(board, location)
 end
 
 def won?(board)
-  WIN_COMBINATIONS.each do |array|
-    array.each do |element|
-    if board[array[0]] == "X" && board[array[1]] == "X" && board[array[2]] == "X"
-      return array
-    elsif board[array[0]] == "O" && board[array[1]] == "O" && board[array[2]] == "O"
-      return array
-    else
-    end
+  WIN_COMBINATIONS.detect do |x|
+    (board[x[0]] == "X" &&
+     board[x[1]] == "X" &&
+     board[x[2]] == "X") ||
+    (board[x[0]] == "O" &&
+     board[x[1]] == "O" &&
+     board[x[2]] == "O") &&
+    position_taken?(board, x[0])
   end
 end
+
+def full?(board) 
+  if board.all? {|x| x == "O" || x == "X"} 
+    return true
+  end
 end
 
+def draw?(board)
+  if !won?(board) && full?(board)
+    return true
+  else
+    return false
+  end
+end
+
+def over?(board)
+  if full?(board) || won?(board)
+    return true
+  end
+end
+
+def winner(board)
+  array = won?(board)
+  if won?(board)
+    return board[array[0]]
+  end
+end
 
 
 WIN_COMBINATIONS = [
