@@ -29,6 +29,15 @@ def full?(board)
   end
 end
 
+def full2?(board)
+  counter = -1
+  is_full = board.all? do
+    counter += 1
+    position_taken?(board, counter)
+  end
+end
+
+
 def draw?(board)
   !won?(board) && full?(board)
 end
