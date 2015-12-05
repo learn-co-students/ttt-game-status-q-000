@@ -16,29 +16,27 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |combo|
-    if board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X"
-      return combo
-    elsif board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O"
-      return combo
-    end
+  WIN_COMBINATIONS.detect do |win_combo|
+    board[win_combo[0]] == board[win_combo[1]] &&
+     board[win_combo[1]] == board[win_combo[2]] &&
+     position_taken?(board, win_combo[0])
   end
-  false
 end
 
 def winner(board)
-  winning_combo = won?(board)
-  winning_combo ? board[winning_combo[0]] : nil
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
 end
 
 def full?(board)
-  board.include?("") || board.include?(" ") || board.include?(nil) ? false : true
+  board.all? { |move| move == "X" || move == "O" }
 end
 
 def over?(board)
-  won?(board) || draw?(board) ? true : false
+  won?(board) || draw?(board)
 end
 
 def draw?(board)
-  won?(board) || !full?(board) ? false : true
+  full?(board) && !won?(board)
 end
