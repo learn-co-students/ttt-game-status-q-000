@@ -10,13 +10,10 @@ WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],
   ]
 
 def won?(board)
-  win_combination = WIN_COMBINATIONS.find do |win_combination|
-    win_combination.all? {|index| board[index]=="X"} or win_combination.all? {|index| board[index]=="O"}
-  end
-  if win_combination == nil
-    return false
-  else
-    return win_combination
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board,combo[0])
   end
 end
 
@@ -25,15 +22,15 @@ def full?(board)
 end
 
 def draw?(board)
-  return true if full?(board) && won?(board)==false
+  full?(board) && !won?(board)
 end
 
 def over?(board)
-  return true if won?(board)!=false||draw?(board)
+  won?(board)||full?(board)
 end
 
 def winner(board)
-  if won?(board)!=false
-    board[won?(board)[0]]
+  if winning_combo= won?(board)
+    board[winning_combo.first]
   end
 end
