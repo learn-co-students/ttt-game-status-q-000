@@ -37,7 +37,7 @@ end
 def over?(board)
   #(won?(board) || draw?(board)) ? true : false
   return true if won?(board)
-  return true if (draw?(board) && full?(board))
+  return true if (draw?(board) || full?(board))
 end
 
 def winner(board)
