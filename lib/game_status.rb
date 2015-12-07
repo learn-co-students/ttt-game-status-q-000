@@ -16,52 +16,19 @@ WIN_COMBINATIONS = [
   [0,4,8]
   ]
 
-def won?(board) # returns winning array if it finds one, otherwise false
+def won?(board)
   x_o = ["X", "O"]
-  x_o.each do |player|
-
-  if board[WIN_COMBINATIONS[0][0]] == player && board[WIN_COMBINATIONS[0][1]] == player && board[WIN_COMBINATIONS[0][2]] == player
-  return [0,1,2]
-  else false
+  x_o.detect do |player|
+    WIN_COMBINATIONS.detect do |line|
+      if board[line[0]] == player && board[line[1]] == player && board[line[2]] == player
+        return line
+      else false
+      end
+    end
   end
-
-  if board[WIN_COMBINATIONS[1][0]] == player && board[WIN_COMBINATIONS[1][1]] == player && board[WIN_COMBINATIONS[1][2]] == player
-  return [3,4,5]
-  else false
-  end
-
-  if board[WIN_COMBINATIONS[2][0]] == player && board[WIN_COMBINATIONS[2][1]] == player && board[WIN_COMBINATIONS[2][2]] == player
-  return [6,7,8]
-  else false
-  end
-
-  if board[WIN_COMBINATIONS[3][0]] == player && board[WIN_COMBINATIONS[3][1]] == player && board[WIN_COMBINATIONS[3][2]] == player
-  return [0,3,6]
-  else false
-  end
-
-  if board[WIN_COMBINATIONS[4][0]] == player && board[WIN_COMBINATIONS[4][1]] == player && board[WIN_COMBINATIONS[4][2]] == player
-  return [1,4,7]
-  else false
-  end
-
-   if board[WIN_COMBINATIONS[5][0]] == player && board[WIN_COMBINATIONS[5][1]] == player && board[WIN_COMBINATIONS[5][2]] == player
-  return [2,5,8]
-  else false
-  end
-
-   if board[WIN_COMBINATIONS[6][0]] == player && board[WIN_COMBINATIONS[6][1]] == player && board[WIN_COMBINATIONS[6][2]] == player
-  return [6,4,2]
-  else false
-  end
-
-  if board[WIN_COMBINATIONS[7][0]] == player && board[WIN_COMBINATIONS[7][1]] == player && board[WIN_COMBINATIONS[7][2]] == player
-  return [0,4,8]
-  else false
-  end
-end
   false
 end
+
 
 def full?(board) # returns true if board is full, otherwise false
    all_full = board.all? do |contents|
