@@ -44,14 +44,18 @@ end
 
 #return the token, "X" or "O" that has won the game given a winning board
 def winner(board)
-  if won?(board)[0] = "X"
-    return "X"
-  elsif won?(board)[0] = "O"
-    return "O"
-  else
-    return false
-  end  
+  if board[won?(board)[0]] 
+    return board[won?(board)[0]] 
+  else !won?(board)
+    return nil
+  end
 end
 
+
+def winner(board)
+  if winner = won?(board)
+    board[won?(board)[0]]
+  end
+end
 
 
