@@ -42,9 +42,9 @@ end
 
 def draw?(board)
   #return true if no win and full, false if no win and not full, false if win
-  if won?(board) == false && position_taken?(board, location) == true
+  if won?(board) == false && full?(board) == true
     then true
-  elsif won?(board) == false && position_taken?(board, location) == false
+    elsif won?(board) == false && full?(board) == false
     then false
   elsif won?(board) == true
     then false
@@ -53,16 +53,22 @@ end
 
 def over?(board)
   #return true if board won, draw, or full
-  if won?(board) == true && draw?(board) == true && full?(board) == true
-    then return true
+  if won?(board) == true
+    return true
+  elsif draw?(board) == true
+    return true
+  elsif full?(board) == true
+    return true
   end
 end
 
-def winner(board, token)
+def winner(board)
   #return "X" or "O" winner
-  if won?(board).include?("X") then
-    puts "X is the winner!"
+  if won?(board).all? { |nested_position| board[nested_position] == "X" }
+    return "X"
+  elsif won?(board).all? { |nested_position| board[nested_position] == "O" }
+    return "O"
   else
-    puts "O is the winner!"
+    return nil
   end
 end
