@@ -64,13 +64,11 @@ end
 
 def winner(board)
   #return "X" or "O" winner
-  if won?(board) == true
-    if won?(board).all? { |nested_position| board[nested_position] == "X" }
-      return "X"
-    elsif won?(board).all? { |nested_position| board[nested_position] == "O" }
-      return "O"
-    end
-  else
+  if won?(board).all? { |nested_position| board[nested_position] == "X" }
+    return "X"
+  elsif won?(board).all? { |nested_position| board[nested_position] == "O" }
+    return "O"
+  elsif won?(board) == false
     return nil
   end
 end
