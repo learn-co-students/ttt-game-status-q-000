@@ -20,10 +20,10 @@ def won?(board)
   #return win combination indexes or nil
   #iterate over WIN_COMBINATIONS
   WIN_COMBINATIONS.any? do |nested_array|
-    if nested_array.all? { |index_position| board[index_position] == "X" } == true
-      return nested_array
-    elsif nested_array.all? { |index_position| board[index_position] == "O" } == true
-      return nested_array
+    if nested_array.all? { |index_position| board[index_position] == "X" }
+      return true
+    elsif nested_array.all? { |index_position| board[index_position] == "O" }
+      return true
     else
     end
   end
