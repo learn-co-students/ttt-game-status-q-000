@@ -54,7 +54,6 @@ def winner(board)
   winning_location = won?(board)
   if winning_location
     board[winning_location[0]]
-  else
-    nil
+  else return nil
   end
 end
