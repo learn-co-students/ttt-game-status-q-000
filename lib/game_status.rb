@@ -16,34 +16,33 @@ WIN_COMBINATIONS = [
   [6, 4, 2]
 ]
 
-
 # def won?(board)
 #   WIN_COMBINATIONS.each do |win_combo|
-#     if win_combo.all? {|index| board[index] == "X" } 
-#       return win_combo 
+#     if win_combo.all? {|index| board[index] == "X" }
+#       return win_combo
 #     elsif win_combo.all? {|index| board[index] == "O"}
-#        return win_combo 
+#        return win_combo
 #     end
 #   end
 #   false
 # end
 
-# refactored 
+# refactored
 
 def won?(board)
   WIN_COMBINATIONS.detect do |win_combo|
-    return win_combo if win_combo.all? { |position| board[position] == "X" }
-    return win_combo if win_combo.all? { |position| board[position] == "O" }
+    return win_combo if win_combo.all? {|position| board[position] == "X" }
+    return win_combo if win_combo.all? {|position| board[position] == "O" }
   end
 end
 
 def full?(board)
-  board.all? { |position| position != " " } 
+  board.all? {|position| position != " " }
 end
 
 def draw?(board)
   full?(board)
-  !won?(board)   
+  !won?(board)
 end
 
 def over?(board)
@@ -53,30 +52,18 @@ def over?(board)
 end
 
 def winner(board)
-  WIN_COMBINATIONS.find  do |win_combo|
-    return "X" if win_combo.all? {|position| board[position] == "X" } 
-    return "O" if win_combo.all? {|position| board[position] == "O" }
-  end
+ if won?(board)
+   board[won?(board).first]
+ end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def play(board)
+  until over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cats Game!"
+  end
+end
