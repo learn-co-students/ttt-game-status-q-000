@@ -41,8 +41,8 @@ end
 
 #winner method
 def winner(board)
-  if won?(board) == true
-    won?(board[1])
+  if winner = won?(board)
+    board[winner[1]]
   else
     nil
   end
