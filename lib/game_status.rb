@@ -16,15 +16,35 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
-  WIN_COMBINATIONS.select do |win_combination|
-    win_index_1 = win_combination[0]
-    win_index_2 = win_combination[1]
-    win_index_3 = win_combination[2]
+  winning_combo = false
+  WIN_COMBINATIONS.each do |win_combination|
+    if win_combination.all?{|index| board[index] == "X"}
+      winning_combo = win_combination
+    elsif win_combination.all?{|index| board[index] == "O"}
+      winning_combo = win_combination
+    end
+  end
+  winning_combo
+end
 
-    position_1 = board[win_index_1]
-    position_2 = board[win_index_2]
-    position_3 = board[win_index_3]
+def full?(board)
+  board.all?{|character| character == "X" || character == "O"}
+end
 
-    (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")
+def draw?(board)
+  full?(board) && !won?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board) || full?(board)
+end
+
+def winner(board)
+  if over?(board) == false
+    winner = nil
+  elsif won?(board).all?{|index| board[index] == "X"}
+    winner = "X"
+  elsif won?(board).all?{|index| board[index] == "O"}
+    winner = "O"
   end
 end
