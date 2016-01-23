@@ -63,11 +63,11 @@ end
 
 def winner(board)
   position = won?(board)
-  if won?(board) == false
-    nil
-  elsif board[position[0]] == 'X' && board[position[1]] == 'X' && board[position[2]] == 'X'
+  if board[position[0]] == 'X' && board[position[1]] == 'X' && board[position[2]] == 'X'
     'X'
   elsif board[position[0]] == 'O' && board[position[1]] == 'O' && board[position[2]] == 'O'
     'O'
+  else
+    nil
   end
 end
