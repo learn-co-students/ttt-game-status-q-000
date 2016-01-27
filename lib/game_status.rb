@@ -1,8 +1,4 @@
 # Helper Method
-def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
-end
-
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [[0,1,2],
                   [3,4,5],
@@ -33,32 +29,32 @@ def won?(board)
   false
 end
 
+def position_taken?(board, location)
+  !(board[location].nil? || board[location] == " ")
+end
+
 def draw?(board)
-  if won?(board) == false && full?(board) == true
-    true
-  elsif won?(board) == true
-    false
-  else
-    false
-  end
+  full?(board) && !won?(board)
+  # if won?(board) == false && full?(board) == true
+  #   true
+  # elsif won?(board) == true
+  #   false
+  # else
+  #   false
+  # end
 end
 
 def full?(board)
-  if board.include?(" ")
-    false
-  else
-    true
-  end
+  board.include?(" ") ? false : true
+  # if board.include?(" ")
+  #   false
+  # else
+  #   true
+  # end
 end
 
 def over?(board)
-  if draw?(board) == true 
-    true
-  elsif won?(board).class == Array
-    true
-  else
-    false
-  end
+  won?(board) || draw?(board)
 end
 
 def winner(board)
