@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'yaml'
+require 'optparse'
+require_relative '../lib/learn_linter.rb'
+
+if ARGV.length == 0
+  dir = Dir.pwd
+  lint = LearnLinter.new(dir).lint_directory
+elsif ARGV.length == 1 && ARGV[0] == "quiet"
+  dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
+  lint = LearnLinter.new(dir, "quiet")
+elsif ARGV.length > 1 && ARGV[1] == "quiet"
+  lint = LearnLinter.new(ARGV[0], "quiet").lint_directory
+elsif ARGV.length > 1 && ARGV[1] != "quiet"
+  puts "please use 'learn-lint directory_name quiet' or 'learn-lint directory_name"
+elsif ARGV.length == 1
+  lint = LearnLinter.new(ARGV[0]).lint_directory
+end
+
+

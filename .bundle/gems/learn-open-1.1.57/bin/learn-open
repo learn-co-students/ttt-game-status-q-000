@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'learn_open'
+
+lesson, editor_specified, next_lesson = LearnOpen::ArgumentParser.new(ARGV).execute
+
+LearnOpen::Opener.run(lesson: lesson, editor_specified: editor_specified, get_next_lesson: next_lesson)

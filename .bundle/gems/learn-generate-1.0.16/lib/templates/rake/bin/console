@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+require 'rake'
+
+begin
+  require_relative '../config/environment'
+  puts "Environment in config/environment loaded...welcome to your code."
+rescue
+  puts "Unable to load environment from config/environment"
+end
+
+begin
+  load 'Rakefile'
+  puts "Rakefile loaded. See all your tasks with Rake::Task.tasks"
+rescue
+  puts "Unable to load Rakefile"
+end
+
+Pry.start

@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'learn_config'
+
+KNOWN_COMMANDS = [
+  '--reset',
+  '--whoami',
+  '--set-directory'
+]
+
+ARGV.map! do |arg|
+  KNOWN_COMMANDS.include?(arg) ? arg : nil
+end.compact!
+
+LearnConfig::Setup.run(ARGV)
