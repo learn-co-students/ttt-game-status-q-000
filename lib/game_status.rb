@@ -16,15 +16,10 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
-  winning_combo = false
-  WIN_COMBINATIONS.each do |win_combination|
-    if win_combination.all?{|index| board[index] == "X"}
-      winning_combo = win_combination
-    elsif win_combination.all?{|index| board[index] == "O"}
-      winning_combo = win_combination
-    end
+  WIN_COMBINATIONS.detect do |combo|
+    (board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X") ||
+      (board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O")
   end
-  winning_combo
 end
 
 def full?(board)
