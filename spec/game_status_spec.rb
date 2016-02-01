@@ -29,6 +29,12 @@ describe "./lib/game_status.rb" do
       expect(won?(board)).to be_falsey
     end
 
+    it 'returns false for an in-progress game' do
+      board = ["X", " ", " ", "O", " ", " ", " ", "X", " "]
+
+      expect(won?(board)).to be_falsey
+    end
+
     it 'returns an array of matching indexes for a top row win' do
       board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
 
@@ -123,6 +129,12 @@ describe "./lib/game_status.rb" do
       board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
 
       expect(over?(board)).to be_truthy
+    end
+
+    it 'returns false for an empty board' do
+      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+      expect(over?(board)).to be_falsey
     end
 
     it 'returns false for an in-progress game' do
