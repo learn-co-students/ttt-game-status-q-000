@@ -8,20 +8,30 @@ WIN_COMBINATIONS = [[0,1,2],
                   [0,4,8],
                   [2,4,6]]
                   
+#
+# I suspect this code is fragile
+# It's from someone with some C background
+#
+#def won?(board)
+#  WIN_COMBINATIONS.each do |win_combination|
+#    if board[win_combination[0]] != " " && 
+#      ((board[win_combination[0]] == board[win_combination[1]]) &&
+#      (board[win_combination[1]] == board[win_combination[2]]))
+#      return win_combination
+#    end
+#  end
+#  return false
+#end
+
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination| 
-    win_index_1 = win_combination[0]
-    win_index_2 = win_combination[1]
-    win_index_3 = win_combination[2]
+    position = { one: board[win_combination[0]],
+                 two: board[win_combination[1]],
+                 three: board[win_combination[2]] }
 
-    # load the value of board at specified index
-    position_1 = board[win_index_1]
-    position_2 = board[win_index_2]
-    position_3 = board[win_index_3]
-
-    if position_1 == 'X' && position_2 == 'X' && position_3 == 'X'
+    if position[:one] == 'X' && position[:two] == 'X' && position[:three] == 'X'
       return win_combination
-    elsif position_1 == 'O' && position_2 == 'O' && position_3 == 'O'
+    elsif position[:one] == 'O' && position[:two] == 'O' && position[:three] == 'O'
       return win_combination
     end
   end
