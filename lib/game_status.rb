@@ -19,10 +19,8 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   WIN_COMBINATIONS.detect do |combo| #the 8 nested arrays
-    if board[combo[0]] == board[combo[1]] &&   #these 3 lines check if one index is equal to the next one.
-       board[combo[1]] == board[combo[2]] &&   #dont need to check if it equals to "X" each time - too much work.
-       position_taken?(board, combo[0])
-      return combo #returns an array of winning numbers
+    if board[combo[0]] == board[combo[1]] && board[combo[1]] == board[combo[2]] && position_taken?(board, combo[0])
+      combo #returns the winning array of 3 numbers
     else
       false
     end
@@ -46,13 +44,13 @@ def over?(board)
 end
 
 def winner(board)
-   won?(board)
-    if board[combo[0]] == "X"
-    "X"
-  elsif board[combo[0]] == "O"
-    "O"
+  combo = won?(board) # either returns array or nil
+  if combo
+    board[combo[0]] #returns the token itself. "X" OR "O" No need to overcomplicate things, keep it simple.
   else
     nil
-    end
   end
 end
+
+
+
