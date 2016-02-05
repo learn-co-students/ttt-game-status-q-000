@@ -11,12 +11,9 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |win_combination|
-    if win_combination.all? {|i| board[i] == "X"} ||  win = win_combination.all? {|i| board[i] == "O"}
-      return win_combination
-    end
+  WIN_COMBINATIONS.detect do |win_combination|
+    win_combination.all? {|i| board[i] == "X"} ||  win = win_combination.all? {|i| board[i] == "O"}
   end
-  return false
 end
 
 def full?(board)
