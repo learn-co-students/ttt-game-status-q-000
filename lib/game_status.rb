@@ -52,12 +52,10 @@ def over?(board)
   end
 end
 
-def winner?(board)
-  #win_combination = won?(board)
-  #win_combination ? spaces[win_combination[0]] : false
-  if win_combination == (position_1 == "X" && position_2 =="X" && position_3 =="X")
+def winner(board)
+  if (won?(board) == true) && (position_1 == "X" && position_2 =="X" && position_3 =="X")
     "X"
-  elsif win_combination == (position_1 == "O" && position_2 =="O" && position_3 =="O")
+  elsif (won?(board) == true) && (position_1 == "O" && position_2 =="O" && position_3 =="O")
     "O"
   else
     nil
