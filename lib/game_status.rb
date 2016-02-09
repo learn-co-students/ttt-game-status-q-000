@@ -53,11 +53,14 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) == true && (position_1 == "X" && position_2 =="X" && position_3 =="X")
-    "X"
-  elsif won?(board) == true && (position_1 == "O" && position_2 =="O" && position_3 =="O")
-    "O"
-  else
-    nil
+  result = won?(board)
+   if result.is_a?(Array) 
+     if board[result[0]] == "X"
+        "X"
+     else
+        "O"
+     end
+    else
+      nil
   end
 end
