@@ -1,3 +1,5 @@
+require 'pry'
+
 # Helper Method
 def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
