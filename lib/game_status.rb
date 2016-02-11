@@ -21,7 +21,7 @@ win_index_1 = win_combination[0]
   position_3 = board[win_index_3] # load the value of the board at win_index_3
 
   if (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")
-    puts win_combination
+    #puts win_combination
     return win_combination # return the win_combination indexes that won.
   end
 
@@ -36,3 +36,34 @@ def full?(board)
   end
 
 end
+
+
+def draw?(board)
+  if (full?(board) && !won?(board))
+    return true
+  else return false
+  end
+end
+
+
+def over?(board)
+  if (won?(board) || full?(board))
+    return true
+  else return false
+  end
+end
+
+def winner(board)
+  if won?(board)
+  if board[won?(board)[0]]  == 'X'
+    return 'X'
+  else if board[won?(board)[0]] == 'O'
+    return 'O'
+  end
+end
+end
+else return nil
+end
+
+
+puts won?(["X","X","X","","","","","","",""])[0]
