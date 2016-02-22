@@ -31,9 +31,11 @@ end
 def winner(board)
 
   won = won?(board)
+ 
 
   if won != nil
-    return board[won[0]]
+    type = won[0]
+    return board[type]
   end
 end
 
