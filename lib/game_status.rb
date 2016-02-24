@@ -20,9 +20,7 @@ end
 end
 
 def full?(board)
-  board.all? do |item|
-  item == "X" || item == "O"
-end
+  !board.include?(" ") && !board.include?("")
 end
 
 def draw?(board)
