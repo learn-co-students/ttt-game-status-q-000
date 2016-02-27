@@ -65,11 +65,12 @@ end
 def winner(board)
   winning_index = won?(board)
   if won?(board)
-    if board[winning_index[0]] == "X" and board[winning_index[1]] == "X" and board[winning_index[2]] == "X"
-      "X"
-    elsif board[winning_index[0]] == "O" and board[winning_index[1]] == "O" and board[winning_index[2]] == "O"
-      "O"
-    end
+      puts "Contratulations #{current_player(board)}!"
+#     if board[winning_index[0]] == "X" and board[winning_index[1]] == "X" and board[winning_index[2]] == "X"
+#       "X"
+#     elsif board[winning_index[0]] == "O" and board[winning_index[1]] == "O" and board[winning_index[2]] == "O"
+#       "O"
+#     end
   else
     nil
   end
