@@ -1,9 +1,9 @@
-# Helper Method
+#determines if position is occupied, returns true/false
 def position_taken?(board, location)
   return !(board[location].nil? || board[location] == " ")
 end
 
-# Define your WIN_COMBINATIONS constant
+#WIN_COMBINATIONS constant, all 8 possible wins
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -36,17 +36,11 @@ def won?(board)
 end #end of won? method
 
 def full?(board)
-  isFull = true
-  board.each do |position|
-    if position == ' '
-      isFull = false
-    end
-  end
-  return isFull
+  board.none? {|position| position == " "}
 end
 
 def draw?(board)
-  if won?(board) == false && full?(board) == true
+  if won?(board) == false && full?(board)
     return true
   elsif won?(board) == false && full?(board) == false
     return false
