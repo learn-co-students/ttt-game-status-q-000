@@ -15,26 +15,30 @@ WIN_COMBINATIONS = [
   [2, 5, 8] #right column
   ]
 
-matches = []
+matches =
 
 def won?(board)
-  if full?(board)
-    return false
-  else
 
     matches = WIN_COMBINATIONS.select do |combo|
 
-       winning = combo.all? do |space|
-          board[space]=="X" || board[space]=="O" #needed to change it to just board[space]. Also needed to remove the "if" I had here, because "all?" already checks for truth
+     o_wins = combo.all? do |space|
+          board[space]=="O"  #needed to change it to just board[space]. Also needed to remove the "if" I had here, because "all?" already checks for truth
+        end #end of combo.all? and the "winning" declaration
+      x_wins = combo.all? do |space|
+          board[space]=="X"  #needed to change it to just board[space]. Also needed to remove the "if" I had here, because "all?" already checks for truth
         end #end of combo.all? and the "winning" declaration
 
+      o_wins || x_wins
     end #end of WIN_COMBINATONS.each
-  def winner(board)
-    return matches[0][0]
-  end
-  return matches[0]
-  end #end of overarching if statement
-end
+   final_check = matches.any? do |i|
+    i.length>1
+   end
+  if final_check
+    return matches[0]
+    else
+    return false
+  end #end of the return conditional
+end # end of the won? method
 
 def full?(board)
     board.all? do |space|
@@ -43,12 +47,26 @@ def full?(board)
 end
 
 def draw?(board)
-  if !won?(board) && full?(board)
-      return true
+  if won?(board)==false && full?(board)
+      return true   #if this is returning true for a won game, that means some types of won games are returning false in my #won? method. Which ones and why?
     else
       return false
   end
 end
 
+def over?(board)
+  if won?(board) || draw?(board)
+    return true
+    else
+    return false
+  end
+end
+
+def winner(board)
+  win_index=won?(board)
+  if won?(board)
+    return board[win_index[0]]
+  end
+end
 
 won?(board)
