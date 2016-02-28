@@ -6,13 +6,9 @@
 #This method should iterate through the winning combinations nested array. I want to take each index and capture that value to see if the board array has each certain combination of winning sets, then output the appropriate message. If none of those combinations are present, output false or nil.
 #require 'pry'
 
-# Helper Method
-def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
-end
-
-board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
-# Define your WIN_COMBINATIONS constant
+#your board array
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+#WIN_COMBINATIONS constant
 WIN_COMBINATIONS =[
   [0,1,2],
   [3,4,5],
@@ -25,7 +21,15 @@ WIN_COMBINATIONS =[
 
   ]
 
+#this method will initiate the game of TTT
+def play(board)
+  input = gets.strip
+end
 
+# Helper Method
+def position_taken?(board, location)
+  !(board[location].nil? || board[location] == " ")
+end
 
 def draw?(board)
   if won?(board) == false
@@ -66,4 +70,4 @@ def won?(board)
   false
 end
 
-winner(board)
+play(board)
