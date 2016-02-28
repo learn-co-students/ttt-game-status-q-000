@@ -28,7 +28,7 @@ def won?(board)
           board[space]=="X"  #needed to change it to just board[space]. Also needed to remove the "if" I had here, because "all?" already checks for truth
         end #end of combo.all? and the "winning" declaration
 
-      o_wins || x_wins
+      o_wins || x_wins # this was the key that allowed me to win
     end #end of WIN_COMBINATONS.each
    final_check = matches.any? do |i|
     i.length>1
@@ -63,7 +63,7 @@ def over?(board)
 end
 
 def winner(board)
-  win_index=won?(board)
+  win_index=won?(board) #needed to get an index for pulling out X or O itself, not just the index number. I did that based on the won? method's return value
   if won?(board)
     return board[win_index[0]]
   end
