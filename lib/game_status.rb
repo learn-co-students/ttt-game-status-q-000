@@ -1,5 +1,8 @@
 # Helper Method
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+board1 = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+board2 = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
+
 def position_taken?(board, location)
  !(board[location].nil?) && !(board[location] == " ")
 end
@@ -30,20 +33,25 @@ WIN_COMBINATIONS.each do |combination|
   return combination
 else
   false
-end
 end 
+end
+return false  
 end
 
 def full?(board)
+  outcome = false 
   board.each do |value| 
     if (value == "O" || value == "X")
-      true
-    else 
-      break false
+      outcome = true 
+    else return false
     end
   end
+  return outcome 
 end
 
+puts full?(board)
+puts full?(board1) 
+puts full?(board2)
 
 def draw?(board)
   if (won?(board) == false && full?(board) == true) 
