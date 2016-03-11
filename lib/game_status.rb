@@ -27,9 +27,7 @@ def won?(board)
 end
 
 def full?(board)
-  #all positions are taken = true
-  #returns false for an inprogress game
-  #returns true for a draw
+  board.any?{|spot| spot == " "}
 end
 
 
