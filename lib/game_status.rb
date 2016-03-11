@@ -35,19 +35,28 @@ def full?(board)
 end
 
 def draw?(board) #ask
-  if full?(board) == true && won?(board) == false
+  if full?(board) == true && won?(board) == false && over?(board) == true
     return true
   else
-    false
+    return false
   end
 end
-
 
 def over?(board)
   if won?(board) == true || draw?(board) == true || full?(board) == true
     return true
   else
     false
+  end
+end
+
+def winner?(board)
+  if won?(board) == true && WIN_COMBINATIONS.all?{|x| x == "X"}
+    return "X"
+  elsif won?(board) == true && WIN_COMBINATIONS.all?{|o| o == "O"}
+    return "O"
+  else
+    return nil
   end
 end
 
