@@ -27,19 +27,29 @@ def won?(board)
 end
 
 def full?(board)
-  if board.any?{|spot| spot == " "}
+  if board.any?{|spot| spot == " " || spot == nil}
     return false
   else
     true
   end
 end
 
-def draw?(board)
+def draw?(board) #ask
   if full?(board) == true && won?(board) == false
     return true
   else
     false
   end
 end
-  #its a draw if full? == true && won? == false
+
+
+def over?(board)
+  if won?(board) == true || draw?(board) == true || full?(board) == true
+    return true
+  else
+    false
+  end
+end
+
+
 
