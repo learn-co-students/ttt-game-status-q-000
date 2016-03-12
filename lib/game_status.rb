@@ -36,7 +36,7 @@ def full?(board)
   end
 end
 
-def draw?(board) #ask
+def draw?(board)
   if full?(board) == true && won?(board) == false
     return true
   else
@@ -45,16 +45,20 @@ def draw?(board) #ask
 end
 
 def over?(board)
-  if won?(board) == true || draw?(board) == true || full?(board) == true
+  if won?(board) == true || full?(board) == true
     return true
   else
     false
   end
 end
 
-def winner?(board)
-  if won?(board) == true
+def winner(board)
+  if won?(board) != false
+    array = won?(board)
+    winn = array[0]
+    return board[winn]
   else
     nil
   end
 end
+
