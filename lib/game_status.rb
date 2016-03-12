@@ -53,12 +53,6 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) != false #then there is a winner
-    array = won?(board) #array that represents the winning board
-    winn = array[0] #array with winning selection
-    return board[winn] #returns board with winning array
-  else
-    nil
-  end
+
 end
 
