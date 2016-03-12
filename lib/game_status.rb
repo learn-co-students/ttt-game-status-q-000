@@ -22,8 +22,10 @@ def won?(board)
 
     if position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O"
       return single_win
+    else false
     end
   end
+  return false
 end
 
 def full?(board)
@@ -35,7 +37,7 @@ def full?(board)
 end
 
 def draw?(board) #ask
-  if full?(board) == true && won?(board) == false && over?(board) == true
+  if full?(board) == true && won?(board) == false
     return true
   else
     return false
@@ -51,14 +53,5 @@ def over?(board)
 end
 
 def winner?(board)
-  if won?(board) == true && WIN_COMBINATIONS.all?{|x| x == "X"}
-    return "X"
-  elsif won?(board) == true && WIN_COMBINATIONS.all?{|o| o == "O"}
-    return "O"
-  else
-    return nil
-  end
+
 end
-
-
-
