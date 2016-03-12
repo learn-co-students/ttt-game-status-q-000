@@ -53,6 +53,21 @@ def over?(board)
 end
 
 def winner(board)
+  WIN_COMBINATIONS.each do |single_win|
+    win_index_1 = single_win[0]
+    win_index_2 = single_win[1]
+    win_index_3 = single_win[2]
 
+    position_1 = board[win_index_1]
+    position_2 = board[win_index_2]
+    position_3 = board[win_index_3]
+
+    if position_1 == "X" && position_2 == "X" && position_3 == "X"
+      return "X"
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+      return "O"
+    elsif won?(board) == false
+      return nil
+    end
+  end
 end
-
