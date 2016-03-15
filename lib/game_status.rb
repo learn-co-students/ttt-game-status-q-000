@@ -20,7 +20,7 @@ def won?(board)
     WIN_COMBINATIONS.each do |combination|
       if combination.all? { |position| board[position] == 'X'}
         return combination
-       elsif combination.all? { |position| board[position] == 'O'}    # Seperate for 'X' and 'O' otherwise draws don't work
+       elsif combination.all? { |position| board[position] == 'O'}    # Seperate for 'X' and 'O' otherwise it fails if it's a draw
         return combination
       end
     end
