@@ -16,21 +16,16 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.find do |win_combos|
-    o_winner = win_combos.all? do |position|
-      board[position].include?("O")
-    end
-    x_winner = win_combos.all? do |position|
-      board[position].include?("X")
-    end
-
-    return win_combos if o_winner || x_winner
+  WIN_COMBINATIONS.detect do |win_combo|
+    board[win_combo[0]].eql?(board[win_combo[1]]) &&
+    board[win_combo[1]].eql?(board[win_combo[2]]) &&
+    position_taken?(board, win_combo[0])
   end
 end
 
 def winner(board)
-  game_result = won?(board)
-  !!game_result ? board[game_result.first] : game_result
+  winning_combo = won?(board)
+  return board[winning_combo.first] if winning_combo
 end
 
 def full?(board)
@@ -44,5 +39,5 @@ def draw?(board)
 end
 
 def over?(board)
-  won?(board) || draw?(board) || full?(board) ? true : false
+  won?(board) || draw?(board)
 end
