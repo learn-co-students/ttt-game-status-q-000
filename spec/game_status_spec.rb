@@ -29,16 +29,16 @@ describe "./lib/game_status.rb" do
       expect(won?(board)).to be_falsey
     end
 
-    it 'returns an array of matching indexes for a top row win' do
-      board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
-
-      expect(won?(board)).to match_array([0,1,2])
-    end
-
     it 'returns an array of matching indexes for a middle row win' do
       board = [" ", " ", " ", "X", "X", "X", " ", " ", " "]
 
       expect(won?(board)).to match_array([3,4,5])
+    end
+    
+      it 'returns an array of matching indexes for a top row win' do
+      board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
+
+      expect(won?(board)).to match_array([0,1,2])
     end
 
     it 'returns an array of matching indexes for a bottom row win' do
