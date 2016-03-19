@@ -134,7 +134,7 @@ describe "./lib/game_status.rb" do
 
   describe '#cats_game?' do
     it 'returns true for a cats game' do
-      board = ["X", "O", "X", "O", "O", "X", "X", "X", "O"]
+      board = ["X", "O", "X", "O", "O", "X", " ", "X", "O"]
 
       expect(cats_game?(board)).to be_truthy
     end

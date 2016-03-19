@@ -56,23 +56,49 @@ def winner?(board)
   return nil
 end
 
-def x_and_o?(board,subarray)
-   xs=" "
-   os=" "
+def has_x?(board,subarray)
   subarray.each do |element|
     if board[element] == "X"
-      xs="Y"
-    elsif board[element] == "O"
-      os="Y"
+      return true
     end
   end
-  if xs =="Y" && os=="Y"
-    return true
+return false
+end
+
+def has_o?(board,subarray)
+  subarray.each do |element|
+    if board[element] == "O"
+      return true
+    end
   end
-  return false
+return false
+end
+
+def x_and_o?(board,subarray)
+  subarray.each do |element|
+    if has_x?(board,subarray) && has_o?(board,subarray)
+      return true
+    else
+      return false
+    end
+  end
+end
+
+
+def turn_count(board)
+  counter=0
+board.each do |space|
+  if space == "X" || space == "O"
+    counter += 1
+  end
+end
+return counter
 end
 
 def cats_game?(board)
+  if turn_count(board) < 8
+    return false
+  end
   WIN_COMBINATIONS.each do |subarray|
     if !x_and_o?(board,subarray)
        return false
@@ -95,7 +121,7 @@ WIN_COMBINATIONS = [
 ]
 
 board = ["O", "X", "O"," ","O"," "," "," ","O"]
-board = ["X", "O", "X", "O", "O", "X", "X", "X", "O"]
+board = ["X", "O", "X", "O", "O", "X", " ", "X", "O"]
 
 puts winner?(board)
 puts won?(board)
