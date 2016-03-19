@@ -5,47 +5,69 @@ end
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-
+  [0,1,2], #across top
+  [3,4,5], #across mid
+  [6,7,8], #across bottom
   [0,3,6], #left column
   [1,4,7], #middle column
   [2,5,8], #right column
-
   [0,4,8], #diagonal1
   [2,4,6], #diagonal2
 ]
 
 #won?
 def won?(board)
-  topRowWin = WIN_COMBINATIONS[0]
-  midRowWin = WIN_COMBINATIONS[1]
-  bttmRowWin = WIN_COMBINATIONS[2]
-  leftWin = WIN_COMBINATIONS[3]
-  midWin = WIN_COMBINATIONS[4]
-  rightWin = WIN_COMBINATIONS[5]
-  diag1Win = WIN_COMBINATIONS[6]
-  diag2Win = WIN_COMBINATIONS[7]
+  if
+    board[WIN_COMBINATIONS[0][0]].include?("X") && board[WIN_COMBINATIONS[0][1]].include?("X") && board[WIN_COMBINATIONS[0][2]].include?("X") 
+    return WIN_COMBINATIONS[0] #top row win
+  elsif   
+    board[WIN_COMBINATIONS[1][0]].include?("X") && board[WIN_COMBINATIONS[1][1]].include?("X") && board[WIN_COMBINATIONS[1][2]].include?("X")
+    return WIN_COMBINATIONS[1] #middle row win
+  elsif   
+    board[WIN_COMBINATIONS[2][0]].include?("X") && board[WIN_COMBINATIONS[2][1]].include?("X") && board[WIN_COMBINATIONS[2][2]].include?("X")
+    return WIN_COMBINATIONS[2] #bottom row win
+  elsif   
+    board[WIN_COMBINATIONS[3][0]].include?("X") && board[WIN_COMBINATIONS[3][1]].include?("X") && board[WIN_COMBINATIONS[3][2]].include?("X")
+    return WIN_COMBINATIONS[3] #left column win
+  elsif   
+    board[WIN_COMBINATIONS[4][0]].include?("X") && board[WIN_COMBINATIONS[4][1]].include?("X") && board[WIN_COMBINATIONS[4][2]].include?("X")
+    return WIN_COMBINATIONS[4] #middle column
+  elsif   
+    board[WIN_COMBINATIONS[5][0]].include?("X") && board[WIN_COMBINATIONS[5][1]].include?("X") && board[WIN_COMBINATIONS[5][2]].include?("X")
+    return WIN_COMBINATIONS[5] #right column
+  elsif   
+    board[WIN_COMBINATIONS[6][0]].include?("X") && board[WIN_COMBINATIONS[6][1]].include?("X") && board[WIN_COMBINATIONS[6][2]].include?("X")
+    return WIN_COMBINATIONS[6] #diagonal1 win
+  elsif   
+    board[WIN_COMBINATIONS[7][0]].include?("X") && board[WIN_COMBINATIONS[7][1]].include?("X") && board[WIN_COMBINATIONS[7][2]].include?("X")
+    return WIN_COMBINATIONS[7] #diagonal2 win
 
-  if board[topRowWin[0]] == "X" && board[topRowWin[1]] == "X" && board[topRowWin[2]] == "X"
-    return topRowWin
-  elsif board[midRowWin[0]] == "X" && board[midRowWin[1]] == "X" && board[midRowWin[2]] == "X"
-    return midRowWin
-  elsif board[bttmRowWin[0]] == "X" && board[bttmRowWin[1]] == "X" && board[bttmRowWin[2]] == "X"
-    return bttmRowWin
-  elsif board[leftWin[0]] == "O" && board[leftWin[1]] == "O" && board[leftWin[2]] == "O"
-    return leftWin
-  elsif board[rightWin[0]] == "O" && board[rightWin[1]] == "O" && board[rightWin[2]] == "O"
-    return rightWin
-  elsif board[rightWin[0]] == "O" && board[rightWin[1]] == "O" && board[rightWin[2]] == "O"
-    return rightWin
-  elsif board[midWin[0]] == "O" && board[midWin[1]] == "O" && board[midWin[2]] == "O"
-    return midWin
-  elsif board[diag1Win[0]] == "X" && board[diag1Win[1]] == "X" && board[diag1Win[2]] == "X"
-    return diag1Win
-  elsif board[diag2Win[0]] == "O" && board[diag2Win[1]] == "O" && board[diag2Win[2]] == "O"
-    return diag2Win
+  #check O
+    elsif
+    board[WIN_COMBINATIONS[0][0]].include?("O") && board[WIN_COMBINATIONS[0][1]].include?("O") && board[WIN_COMBINATIONS[0][2]].include?("O") 
+    return WIN_COMBINATIONS[0] #top row win
+  elsif   
+    board[WIN_COMBINATIONS[1][0]].include?("O") && board[WIN_COMBINATIONS[1][1]].include?("O") && board[WIN_COMBINATIONS[1][2]].include?("O")
+    return WIN_COMBINATIONS[1] #middle row win
+  elsif   
+    board[WIN_COMBINATIONS[2][0]].include?("O") && board[WIN_COMBINATIONS[2][1]].include?("O") && board[WIN_COMBINATIONS[2][2]].include?("O")
+    return WIN_COMBINATIONS[2] #bottom row win
+  elsif   
+    board[WIN_COMBINATIONS[3][0]].include?("O") && board[WIN_COMBINATIONS[3][1]].include?("O") && board[WIN_COMBINATIONS[3][2]].include?("O")
+    return WIN_COMBINATIONS[3] #left column win
+  elsif   
+    board[WIN_COMBINATIONS[4][0]].include?("O") && board[WIN_COMBINATIONS[4][1]].include?("O") && board[WIN_COMBINATIONS[4][2]].include?("O")
+    return WIN_COMBINATIONS[4] #middle column
+  elsif   
+    board[WIN_COMBINATIONS[5][0]].include?("O") && board[WIN_COMBINATIONS[5][1]].include?("O") && board[WIN_COMBINATIONS[5][2]].include?("O")
+    return WIN_COMBINATIONS[5] #right column
+  elsif   
+    board[WIN_COMBINATIONS[6][0]].include?("O") && board[WIN_COMBINATIONS[6][1]].include?("O") && board[WIN_COMBINATIONS[6][2]].include?("O")
+    return WIN_COMBINATIONS[6] #diagonal1 win
+  elsif   
+    board[WIN_COMBINATIONS[7][0]].include?("O") && board[WIN_COMBINATIONS[7][1]].include?("O") && board[WIN_COMBINATIONS[7][2]].include?("O")
+    return WIN_COMBINATIONS[7] #bottom row win
+
   else 
     return nil
   end
