@@ -31,8 +31,11 @@ def won?(board)
       # empty board
       return false
     end
+
+    #draw game
+    return false
   end
-  
+
   return nil
 end
 
