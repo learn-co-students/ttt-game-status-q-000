@@ -58,7 +58,6 @@ def winner(board)
   winning_position = winning_combination[0] #6
   #board = ["x","x"," "," "," "," ","O","O","O"]
   board[winning_position] #0
-
 end
 
   # return "X"
