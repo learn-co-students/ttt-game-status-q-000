@@ -53,13 +53,19 @@ def over?(board)
 end
 
 def winner(board)
-  board.each do |piece|
-    if piece == "X"
-      return "X"
-    else piece == "O"
-      return "O"
-    end
-  end
+  if won?(board)
+  winning_combination = won?(board) #[6,7,8]
+  winning_position = winning_combination[0] #6
+  #board = ["x","x"," "," "," "," ","O","O","O"]
+  board[winning_position] #0
+
+end
+
+  # return "X"
+  #    return "X"
+  #else board(WIN_COMBINATIONS) == "O"
+  #    return "O"
+  #  end
 end
 
 
@@ -74,3 +80,6 @@ WIN_COMBINATIONS = [
   [0,4,8], #L-R Diagonal
   [2,4,6], #R-L Diagonal
 ]
+
+board = ["x","x"," "," "," "," ","O","O","O"]
+winning_combination = won?(board) #
