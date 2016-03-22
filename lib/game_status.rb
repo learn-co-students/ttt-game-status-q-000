@@ -3,26 +3,63 @@ def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
 end
 
-def won(board)
-  board = []
-  board.each do |space|
-    if space == "X" || space == "O"
+def won?(board)
+  WIN_COMBINATIONS.each do |win_combination|
+    win_index_1 = win_combination[0]
+    win_index_2 = win_combination[1]
+    win_index_3 = win_combination[2]
+
+    position_1 = board[win_index_1]
+    position_2 = board[win_index_2]
+    position_3 = board[win_index_3]
+
+    if position_1 == "X" && position_2 == "X" && position_3 == "X"
+      return win_combination
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+      return win_combination
+    else
+      false
     end
-
-
     end
+    return false
+  end
+
+
+def full?(board)
+  board.each do |piece|
+    if piece == " "
+      return false
+    end
+  end
+  return true
 end
 
-def full
+def draw?(board)
+  board.each do |piece|
+    if won?(board) == false
+      return true
+    end
+  end
+  return false
 end
 
-def draw
+def over?(board)
+  board.each do |piece|
+    if full?(board) == true
+      return true
+    end
+  end
+  return false
 end
 
-def over
-end
-
-def winner
+def winner(board)
+  board.each do |piece|
+    if piece == "X"
+      return "X"
+    else piece == "O"
+      return "O"
+    end
+  end
 end
 
 
