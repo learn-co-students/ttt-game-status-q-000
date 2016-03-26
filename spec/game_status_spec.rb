@@ -37,13 +37,13 @@ describe "./lib/game_status.rb" do
 
     it 'returns an array of matching indexes for a middle row win' do
       board = [" ", " ", " ", "X", "X", "X", " ", " ", " "]
-
+      
       expect(won?(board)).to match_array([3,4,5])
     end
 
     it 'returns an array of matching indexes for a bottom row win' do
       board = [" ", " ", " ", " ", " ", " ", "X", "X", "X"]
-
+      
       expect(won?(board)).to match_array([6,7,8])
     end
 
@@ -152,3 +152,5 @@ describe "./lib/game_status.rb" do
     end
   end
 end
+
+
