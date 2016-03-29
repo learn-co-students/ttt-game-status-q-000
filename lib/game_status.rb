@@ -35,7 +35,12 @@ def won?(board)
  end
 
   def over?(board)
-
+  if won?(board) && full?(board) == true && draw?(board) == false
+  return true
+  else
+  return false
 
   end
+  end
+
  #draw?(board)# Define your WIN_COMBINATIONS co
