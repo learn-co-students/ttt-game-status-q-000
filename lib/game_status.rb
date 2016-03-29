@@ -27,11 +27,11 @@ def won?(board)
    if board[combos[0]] == " " && board[combos[1]] == " " && board[combos[2]] == " "
   false
      elsif board[combos[0]] == board[combos[1]] && board[combos[0]] == board[combos[2]]
-      else return combos.
+       return combos
+     end
    end
-end
   false
-end
+ end
 
   def over?(board)
 
