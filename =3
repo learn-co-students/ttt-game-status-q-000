@@ -1,0 +1,115 @@
+count	.rvm/gems/ruby-2.2.2@global/gems/minitest-5.4.3/test/minitest/test_minitest_reporter.rb	/^    def reporter.count$/;"	F	class:TestMinitestReporter.new_composite_reporter
+count	.rvm/gems/ruby-2.2.3/gems/activemodel-4.2.4/lib/active_model/errors.rb	/^    def count$/;"	f	class:ActiveModel.Errors
+count	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/associations/collection_association.rb	/^      def count(column_name = nil, count_options = {})$/;"	f	class:ActiveRecord.Associations
+count	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/associations/collection_proxy.rb	/^      def count(column_name = nil, options = {})$/;"	f	class:ActiveRecord.Associations.CollectionProxy
+count	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/null_relation.rb	/^    def count(*)$/;"	f	class:ActiveRecord.NullRelation
+count	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/relation/calculations.rb	/^    def count(column_name = nil, options = {})$/;"	f	class:ActiveRecord.Calculations
+count	.rvm/gems/ruby-2.2.3/gems/arel-6.0.3/lib/arel/expressions.rb	/^    def count distinct = false$/;"	f	class:Arel.Expressions
+count	.rvm/gems/ruby-2.2.3/gems/mime-types-2.6.2/lib/mime/types.rb	/^    def count$/;"	f
+count	.rvm/gems/ruby-2.2.3/gems/mime-types-2.6.2/lib/mime/types.rb	/^  def count$/;"	f	class:MIME
+count	.rvm/gems/ruby-2.2.3/gems/minitest-5.8.1/test/minitest/test_minitest_reporter.rb	/^    def reporter.count$/;"	F	class:TestMinitestReporter.new_composite_reporter
+count	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^        def count$/;"	f	class:Rake.CpuCounter
+count	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count$/;"	f
+count	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def self.count$/;"	F	class:Rake.CpuCounter
+count	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/test/test_rake_cpu_counter.rb	/^        def count; 8; end$/;"	f	class:TestClassMethod.test_count
+count	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^        def count$/;"	f	class:Rake.CpuCounter
+count	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count$/;"	f
+count	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def self.count$/;"	F	class:Rake.CpuCounter
+count	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^        def count$/;"	f	class:Rake.CpuCounter
+count	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count$/;"	f
+count	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def self.count$/;"	F	class:Rake.CpuCounter
+count	.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/gems/minitest-5.4.3/test/minitest/test_minitest_reporter.rb	/^    def reporter.count$/;"	F	class:TestMinitestReporter.new_composite_reporter
+count	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^        def count$/;"	f	class:Rake.CpuCounter
+count	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count$/;"	f
+count	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def self.count$/;"	F	class:Rake.CpuCounter
+count	code/example/.bundle/gems/activemodel-4.2.3/lib/active_model/errors.rb	/^    def count$/;"	f	class:ActiveModel.Errors
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/collection_association.rb	/^      def count(column_name = nil, count_options = {})$/;"	f	class:ActiveRecord.Associations
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/collection_proxy.rb	/^      def count(column_name = nil, options = {})$/;"	f	class:ActiveRecord.Associations.CollectionProxy
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/null_relation.rb	/^    def count(*)$/;"	f	class:ActiveRecord.NullRelation
+count	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/relation/calculations.rb	/^    def count(column_name = nil, options = {})$/;"	f	class:ActiveRecord.Calculations
+count	code/example/.bundle/gems/arel-6.0.2/lib/arel/expressions.rb	/^    def count distinct = false$/;"	f	class:Arel.Expressions
+count	code/example/.bundle/gems/mime-types-2.6.1/lib/mime/types.rb	/^    def count$/;"	f
+count	code/example/.bundle/gems/mime-types-2.6.1/lib/mime/types.rb	/^  def count$/;"	f	class:MIME
+count	code/example/.bundle/gems/minitest-5.7.0/test/minitest/test_minitest_reporter.rb	/^    def reporter.count$/;"	F	class:TestMinitestReporter.new_composite_reporter
+count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^        def count$/;"	f	class:Rake.CpuCounter
+count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count$/;"	f
+count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def self.count$/;"	F	class:Rake.CpuCounter
+count	code/example/.bundle/gems/rake-10.4.2/test/test_rake_cpu_counter.rb	/^        def count; 8; end$/;"	f	class:TestClassMethod.test_count
+count_by_sql	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/querying.rb	/^    def count_by_sql(sql)$/;"	f	class:ActiveRecord.Querying
+count_by_sql	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/querying.rb	/^    def count_by_sql(sql)$/;"	f	class:ActiveRecord.Querying
+count_constraint	.rvm/gems/ruby-2.2.3/gems/rspec-mocks-3.3.2/lib/rspec/mocks/matchers/have_received.rb	/^        def count_constraint$/;"	f	class:RSpec.Mocks.Matchers.HaveReceived
+count_description	code/example/.bundle/gems/rails-dom-testing-1.0.6/lib/rails/dom/testing/assertions/selector_assertions/count_describable.rb	/^    def count_description(min, max, count) #:nodoc:$/;"	f	class:CountDescripable
+count_message	.rvm/gems/ruby-2.2.3/gems/rspec-mocks-3.3.2/lib/rspec/mocks/error_generator.rb	/^      def count_message(count, expectation_count_type=nil)$/;"	f	class:RSpec.Mocks.format_received_args
+count_object_space_documents	.rvm/gems/ruby-2.2.3/gems/nokogiri-1.6.6.2/test/test_memory_leak.rb	/^  def count_object_space_documents$/;"	f	class:TestMemoryLeak
+count_object_space_documents	code/example/.bundle/gems/nokogiri-1.6.6.2/test/test_memory_leak.rb	/^  def count_object_space_documents$/;"	f	class:TestMemoryLeak
+count_objects	.rvm/gems/ruby-2.2.3/gems/mime-types-2.6.2/support/benchmarks/object_counts.rb	/^    def count_objects$/;"	f	class:Benchmarks.ObjectCounts
+count_objects	code/example/.bundle/gems/mime-types-2.6.1/support/benchmarks/object_counts.rb	/^    def count_objects$/;"	f	class:Benchmarks.ObjectCounts
+count_observers	.rvm/rubies/default/lib/ruby/2.2.0/observer.rb	/^  def count_observers$/;"	f	class:Observable
+count_observers	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/observer.rb	/^  def count_observers$/;"	f	class:Observable
+count_observers	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/observer.rb	/^  def count_observers$/;"	f	class:Observable
+count_records	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/associations/has_many_association.rb	/^        def count_records$/;"	f	class:ActiveRecord.Associations.HasManyAssociation
+count_records	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/has_many_association.rb	/^        def count_records$/;"	f	class:ActiveRecord.Associations.HasManyAssociation
+count_space?	.rvm/rubies/default/lib/ruby/2.2.0/scanf.rb	/^    def count_space?$/;"	f	class:Scanf.FormatSpecifier
+count_space?	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/scanf.rb	/^    def count_space?$/;"	f	class:Scanf.FormatSpecifier
+count_space?	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/scanf.rb	/^    def count_space?$/;"	f	class:Scanf.FormatSpecifier
+count_up	.rvm/gems/ruby-2.2.3/gems/thread_safe-0.3.5/test/test_cache_loops.rb	/^  def count_up(opts = {})$/;"	f	class:TestCacheTorture
+count_up	code/example/.bundle/gems/thread_safe-0.3.5/test/test_cache_loops.rb	/^  def count_up(opts = {})$/;"	f	class:TestCacheTorture
+count_up_via_compute	.rvm/gems/ruby-2.2.3/gems/thread_safe-0.3.5/test/test_cache_loops.rb	/^  def count_up_via_compute(opts = {})$/;"	f	class:TestCacheTorture
+count_up_via_compute	code/example/.bundle/gems/thread_safe-0.3.5/test/test_cache_loops.rb	/^  def count_up_via_compute(opts = {})$/;"	f	class:TestCacheTorture
+count_up_via_merge_pair	.rvm/gems/ruby-2.2.3/gems/thread_safe-0.3.5/test/test_cache_loops.rb	/^  def count_up_via_merge_pair(opts = {})$/;"	f	class:TestCacheTorture
+count_up_via_merge_pair	code/example/.bundle/gems/thread_safe-0.3.5/test/test_cache_loops.rb	/^  def count_up_via_merge_pair(opts = {})$/;"	f	class:TestCacheTorture
+count_via_cpuinfo	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_cpuinfo$/;"	f
+count_via_cpuinfo	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_cpuinfo$/;"	f
+count_via_cpuinfo	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_cpuinfo$/;"	f
+count_via_cpuinfo	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_cpuinfo$/;"	f
+count_via_cpuinfo	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_cpuinfo$/;"	f
+count_via_hwprefs_cpu_count	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_hwprefs_cpu_count$/;"	f
+count_via_hwprefs_cpu_count	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_hwprefs_cpu_count$/;"	f
+count_via_hwprefs_cpu_count	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_hwprefs_cpu_count$/;"	f
+count_via_hwprefs_cpu_count	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_hwprefs_cpu_count$/;"	f
+count_via_hwprefs_cpu_count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_hwprefs_cpu_count$/;"	f
+count_via_hwprefs_thread_count	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_hwprefs_thread_count$/;"	f
+count_via_hwprefs_thread_count	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_hwprefs_thread_count$/;"	f
+count_via_hwprefs_thread_count	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_hwprefs_thread_count$/;"	f
+count_via_hwprefs_thread_count	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_hwprefs_thread_count$/;"	f
+count_via_hwprefs_thread_count	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_hwprefs_thread_count$/;"	f
+count_via_java_runtime	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_java_runtime$/;"	f
+count_via_java_runtime	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_java_runtime$/;"	f
+count_via_java_runtime	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_java_runtime$/;"	f
+count_via_java_runtime	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_java_runtime$/;"	f
+count_via_java_runtime	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_java_runtime$/;"	f
+count_via_sysctl	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_sysctl$/;"	f
+count_via_sysctl	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_sysctl$/;"	f
+count_via_sysctl	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_sysctl$/;"	f
+count_via_sysctl	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_sysctl$/;"	f
+count_via_sysctl	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_sysctl$/;"	f
+count_via_win32	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_win32$/;"	f
+count_via_win32	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_win32$/;"	f
+count_via_win32	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_win32$/;"	f
+count_via_win32	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_via_win32$/;"	f
+count_via_win32	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_via_win32$/;"	f
+count_with_default	.rvm/gems/ruby-2.2.3/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_with_default(default=4)$/;"	f	class:Rake.CpuCounter
+count_with_default	.rvm/rubies/default/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_with_default(default=4)$/;"	f	class:Rake.CpuCounter
+count_with_default	.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_with_default(default=4)$/;"	f	class:Rake.CpuCounter
+count_with_default	.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/rake/cpu_counter.rb	/^    def count_with_default(default=4)$/;"	f	class:Rake.CpuCounter
+count_with_default	code/example/.bundle/gems/rake-10.4.2/lib/rake/cpu_counter.rb	/^    def count_with_default(default=4)$/;"	f	class:Rake.CpuCounter
+counter	code/example/.bundle/gems/sass-3.4.16/lib/sass/script/functions.rb	/^    def counter(*args)$/;"	f
+counter_cache_available_in_memory?	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/associations/belongs_to_association.rb	/^        def counter_cache_available_in_memory?(counter_cache_name)$/;"	f	class:ActiveRecord.Associations.BelongsToAssociation
+counter_cache_available_in_memory?	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/belongs_to_association.rb	/^        def counter_cache_available_in_memory?(counter_cache_name)$/;"	f	class:ActiveRecord.Associations.BelongsToAssociation
+counter_cache_column	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/reflection.rb	/^      def counter_cache_column$/;"	f	class:ActiveRecord.AssociationReflection
+counter_cache_column	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/reflection.rb	/^      def counter_cache_column$/;"	f	class:ActiveRecord.AssociationReflection
+counter_must_be_updated_by_has_many?	.rvm/gems/ruby-2.2.3/gems/activerecord-4.2.4/lib/active_record/associations/has_many_association.rb	/^        def counter_must_be_updated_by_has_many?(reflection)$/;"	f	class:ActiveRecord.Associations
+counter_must_be_updated_by_has_many?	code/example/.bundle/gems/activerecord-4.2.3/lib/active_record/associations/has_many_association.rb	/^        def counter_must_be_updated_by_has_many?(reflection)$/;"	f	class:ActiveRecord.Associations
+counters	code/example/.bundle/gems/sass-3.4.16/lib/sass/script/functions.rb	/^    def counters(*args)$/;"	f
+countries	.rvm/gems/ruby-2.2.3/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb	/^      def countries$/;"	f	class:TZInfo.CountryIndexDefinition.ClassMethods
+countries	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb	/^      def countries$/;"	f	class:TZInfo.CountryIndexDefinition.ClassMethods
+country	.rvm/gems/ruby-2.2.3/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb	/^      def country(code, name, &block)$/;"	f	class:TZInfo.CountryIndexDefinition.ClassMethods
+country	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb	/^      def country(code, name, &block)$/;"	f	class:TZInfo.CountryIndexDefinition.ClassMethods
+country_code	.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.4/lib/active_support/number_helper/number_to_phone_converter.rb	/^        def country_code(code)$/;"	f	class:ActiveSupport.NumberHelper.NumberToPhoneConverter
+country_code	code/example/.bundle/gems/activesupport-4.2.3/lib/active_support/number_helper/number_to_phone_converter.rb	/^        def country_code(code)$/;"	f	class:ActiveSupport.NumberHelper.NumberToPhoneConverter
+country_codes	.rvm/gems/ruby-2.2.3/gems/tzinfo-1.2.2/lib/tzinfo/data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.DataSource
+country_codes	.rvm/gems/ruby-2.2.3/gems/tzinfo-1.2.2/lib/tzinfo/ruby_data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.RubyDataSource
+country_codes	.rvm/gems/ruby-2.2.3/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.ZoneinfoDataSource
+country_codes	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.DataSource
+country_codes	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/ruby_data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.RubyDataSource
+country_codes	code/example/.bundle/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_data_source.rb	/^    def country_codes$/;"	f	class:TZInfo.ZoneinfoDataSource
