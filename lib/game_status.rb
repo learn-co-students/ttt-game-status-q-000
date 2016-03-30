@@ -16,12 +16,13 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  tests = win_combinations
+  tests = WIN_COMBINATIONS
   token = "X"
-  tests.each.do |i|
+  tests.each do |i|
     if tests[i][0] == token && tests[i][1] == token && tests[i][2] == token
-      return "#{token} wins!"
+      return tests[i]
     end
+  end
 end
 
 
