@@ -15,20 +15,29 @@ WIN_COMBINATIONS = [
 [2,4,6], #second diagonal
 ]
 
-
-
-
 def won?(board)
-   WIN_COMBINATIONS.each do |wins|
-    a = board[wins[0]]
-    b = board[wins[1]]
-    c = board[wins[2]]
-    
-    if a == "X" && b == "X" && c == "X"
-      return wins
-    elsif a == "O" && b == "O" && c == "O"
-      return wins
-    end
+ WIN_COMBINATIONS.detect do |wins|
+    board[wins[0]] == board[wins[1]] &&
+    board[wins[1]] == board[wins[2]] &&
+    position_taken?(board, wins[0])
   end
-  return false
 end
+
+def full?(board)
+  board.all? {|p| position_taken?(board, p.to_i + 1)} ? true : false
+end
+
+def draw?(board)
+  !won?(board) && full?(board) ?  true : false
+end
+
+def over?(board)
+  won?(board) || full?(board) || draw?(board) ? true : false
+end
+
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
+end
+    
