@@ -32,10 +32,7 @@ def full?(board)
   end
 
  def draw?(board)
-     !board.any? do |status| 
-      status == full?(board) && status == won?(board) ||
-     !status == !won?(board)
-   end
+   full?(board) && !won?(board)
  end
 
 
