@@ -28,26 +28,15 @@ def full?(board)
 end 
 
 def draw?(board)
-  if won?(board)
-    return false
-  elsif !full?(board)
-    return false
-  else
-    return true
-  end
+  !won?(board) && full?(board)
 end
 
 def over?(board)
-  if won?(board) || full?(board) || draw?(board)
-    return true
-  end
+  won?(board) || full?(board)
 end
 
 def winner(board)
-  if won?(board)
-    win_combination = won?(board)
-    return board[win_combination[0]]
-  else
-    return nil
-  end
+    if win_combination = won?(board)
+      board[win_combination.first]
+    end
 end
