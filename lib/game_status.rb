@@ -23,7 +23,7 @@ def won?(board)
   position_1 = combo[0]
   position_2 = combo[1]
   position_3 = combo[2]
-      if position_taken?(board, combo)
+      if position_taken?(combo, board)
     if board[position_1] == "X" && board[position_2] == "X" && board[position_3] == "X"
       combo
         elsif board[position_1] == "O" && board[position_2] == "O" && board[position_3] == "O"
