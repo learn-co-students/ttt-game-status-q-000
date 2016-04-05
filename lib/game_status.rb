@@ -44,21 +44,6 @@ def won?(board)
   return false
 end
 
-# I have made the #which_player_won? method which is basically a recycling of the #won? method
-# because I don't know how to get the winning player out of the #won? method since, according to
-# the instructions, I can only pass it the board and it can only return to me the winning combo
-# or false. So I made this method. I can't see a better way.
-def which_player_won?(board)
-  PLAYERS.each do |mark|
-    WIN_COMBINATIONS.each do |combo|
-      if three_in_a_row?(board, combo, mark)
-        return [combo, mark]
-      end
-    end
-  end
-  return ["no winner", nil]
-end
-
 def draw?(board)
   if full?(board)
     if !won?(board)
@@ -76,8 +61,11 @@ def over?(board)
 end
 
 def winner(board)
-  #return which_player_won?(board)[1]
-  return board[won?(board)[0]]
+  if won?(board)
+    return board[won?(board)[0]]
+  else
+    return nil
+  end
 end
 
 # Define your WIN_COMBINATIONS constant
