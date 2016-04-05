@@ -42,6 +42,7 @@ def draw?(board)
 end
 
 #OVER METHOD
+
 def over?(board)
 	full?(board) == true
 end
