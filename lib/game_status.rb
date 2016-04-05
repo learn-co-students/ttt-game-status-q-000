@@ -23,7 +23,7 @@ def won?(board)
  WIN_COMBINATIONS.detect do |sequence|
     board[sequence[0]] == board[sequence[1]] &&
     board[sequence[0]] == board[sequence[2]] &&
- 	position_taken?(board, sequence[0])
+ 	  position_taken?(board, sequence[0])
   end
 end
 
@@ -49,8 +49,8 @@ end
 
 #WINNER METHOD
 def winner(board)
-   if winning_combo = won?(board)
-   board[winning_combo.first]
+   if winning_sequence = won?(board)
+      board[winning_sequence.first]
   end
 end 
 
