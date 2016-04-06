@@ -1,3 +1,4 @@
+
 # Helper Method
 def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
@@ -19,19 +20,29 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 
 def won?(board)
-  WIN_COMBINATIONS.each do |combo|
-  position_1 = combo[0]
-  position_2 = combo[1]
-  position_3 = combo[2]
-      if position_taken?(combo, board)
-    if board[position_1] == "X" && board[position_2] == "X" && board[position_3] == "X"
-      combo
-        elsif board[position_1] == "O" && board[position_2] == "O" && board[position_3] == "O"
-      combo
-        else
-        false
-    end
-    end
-   false
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
+  end
+end
+
+def full?(board)
+  board.all? do |space|
+    space == "X" || space == "O"
+  end
+end
+
+def draw?(board)
+full?(board) && !won?(board)
+end
+
+def over?(board)
+draw?(board) || won?(board)
+end
+
+def winner(board)
+  if winning_combo = won?(board)
+   board[winning_combo[0]]
   end
 end
