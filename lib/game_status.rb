@@ -65,8 +65,7 @@ end
 
 def winner(board)
   if won?(board)
-    champ = won?(board)
-    champ = champ[0]
+    champ = won?(board)[0]
     return board[champ]
   end
 end
