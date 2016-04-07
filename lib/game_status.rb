@@ -1,6 +1,4 @@
 # Helper Method
-def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
-end
+puts "hello world"
 
 # Define your WIN_COMBINATIONS constant
