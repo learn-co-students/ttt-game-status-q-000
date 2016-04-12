@@ -32,7 +32,7 @@ def won?(board)
      end
    end
   false
- end
+end
 
   def over?(board)
   if won?(board) || full?(board)
@@ -42,13 +42,12 @@ def won?(board)
 
   end
   end
-def winner(board)
- counter = 0
-  board.each do |index|
-if index == "X" || index == "O"
-  counter += 1
-end
+
+ def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo]
   end
 end
+
 
 
