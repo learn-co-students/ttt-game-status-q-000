@@ -19,7 +19,7 @@ def draw?(board)
     return false
  end
 end
-   #if won?(board) == false && full?(board) == true
+
 
 
 WIN_COMBINATIONS =[ [0,1,2], [3,4,5], [6,7,8], [0,4,8], [1,4,7], [0,3,6], [2,5,8], [6,4,2] ]
@@ -35,12 +35,20 @@ def won?(board)
  end
 
   def over?(board)
-  if won?(board) || full?(board) == true
+  if won?(board) || full?(board)
   return true
   else
   return false
 
   end
   end
+def winner(board)
+ counter = 0
+  board.each do |index|
+if index == "X" || index == "O"
+  counter += 1
+end
+  end
+end
 
- #draw?(board)# Define your WIN_COMBINATIONS co
+
