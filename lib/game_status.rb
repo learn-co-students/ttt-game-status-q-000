@@ -1,9 +1,8 @@
-# Helper Method
+
 def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
+  board[location] != " " && board[location] != ""
 end
 
-# Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [[0,1,2],
                       [3,4,5],
                       [6,7,8],
@@ -14,7 +13,9 @@ WIN_COMBINATIONS = [[0,1,2],
                       [2,5,8]]
 
 def won?(board)
-  WIN_COMBINATIONS.all? do |win_combination|
+
+
+  WIN_COMBINATIONS.any? do |win_combination|
     win_index1 = win_combination[0]
     win_index2 = win_combination[1]
     win_index3 = win_combination[2]
@@ -27,15 +28,30 @@ def won?(board)
 
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
       return win_combination
-    elsif position_1 == "O" && posotion_2 == "O" && position_3 == "O"
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
      return win_combination
     else
       false
     end
   end
-
-
-
-
 end
+
+
+def full?(board)
+  is_full = true
+  board.each do |number|
+    number = number.to_i
+    number +=1
+    if position_taken?(board, number) == false
+      is_full = false
+
+    end
+  end
+  return is_full
+end
+
+
+
+
+
 
