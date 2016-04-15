@@ -72,17 +72,18 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) != nil
+ 
+ if won?(board) != false
     winner = won?(board)[0]
     board[winner]
-  elsif draw?(board) == false
-    return nil
-  end
+ else
+ 	nil
+ end
 
-
+ 
 end
 
-
+ 
 
 
 
