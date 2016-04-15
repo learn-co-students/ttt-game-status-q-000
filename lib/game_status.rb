@@ -50,6 +50,38 @@ def full?(board)
   return is_full
 end
 
+def draw?(board)
+  if won?(board) == false
+    if full?(board) == true
+      true
+    elsif full?(board) == false
+      false
+    else
+      false
+    end
+  end
+end
+
+def over?(board)
+  if won?(board) == true || draw?(board) == true || full?(board) == true
+    true
+  else
+    false
+  end
+
+end
+
+def winner(board)
+  if won?(board) != nil
+    winner = won?(board)[0]
+    board[winner]
+  elsif draw?(board) == false
+    return nil
+  end
+
+
+end
+
 
 
 
