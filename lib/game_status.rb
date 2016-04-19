@@ -16,17 +16,10 @@ WIN_COMBINATIONS = [
   ]
 
 def won?(board)
-  return false if board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  winarr = []
-  WIN_COMBINATIONS.each do |arr|
-      if board[arr[0]] == board[arr[1]] && board[arr[1]] == board[arr[2]]
-        winarr << arr unless board[arr[0]] == ' '
-      end
-  end
-  if winarr.count == 1
-    winarr.flatten
-  else
-    false
+  WIN_COMBINATIONS.detect do |arr|
+    board[arr[0]] == board[arr[1]] &&
+    board[arr[1]] == board[arr[2]] &&
+    position_taken?(board, arr[0])
   end
 end
 
