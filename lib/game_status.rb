@@ -37,9 +37,6 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board)
-    arr = won?(board)
-    return board[arr[0]]
-  end
+  return board[won?(board)[0]] if won?(board)
   return nil
 end
