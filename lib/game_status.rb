@@ -14,7 +14,51 @@ end
   [0,4,8], # Top-left to bottom-right diagonal
   [6,4,2]  # Top-right to bottom-left diagonal
     ]
+
 def won?(board)
+  result = false
+  WIN_COMBINATIONS.each do |win_combination|
+    if !result
+      if win_combination.all?{|i| board[i]=="X"} || win_combination.all?{|i| board[i]=="O"}
+         result = win_combination
+      end
+    end
+  end
+   result
+end
+
+def full?(board)
+  if board.any?{|location| location == " "}
+     false
+    else
+      true
+    end
+end
+
+def draw?(board)
+  if won?(board) == false && full?(board) == true
+    true
+  else
+   false
+  end
+end
+
+def over?(board)
+  if won?(board) == false && draw?(board) == false && full?(board) == false
+    false
+  else
+    true
+  end
+end
+
+def winner(board)
+  win_combination = won?(board)
+    if win_combination
+      board[win_combination[0]]
+    else
+      nil
+    end
+=begin
   win_position_1 = WIN_COMBINATTIONS[0]
   win_position_2 = WIN_COMBINATTIONS[1]
   win_position_3 = WIN_COMBINATTIONS[2]
@@ -25,54 +69,39 @@ def won?(board)
   win_position_8 = WIN_COMBINATTIONS[7]
 
   if board[win_position_1[0]] == "X" && board[win_position_1[1]] == "X" && board[win_position_1[2]] == "X"
-    "X won in the top row"
+    "X"
   elsif board[win_position_2[3]] == "X" && board[win_position_2[4]] == "X" && board[win_position_2[5]] == "X"
-    "X won in the middle row"
+    "X"
   elsif board[win_position_3[6]] == "X" && board[win_position_3[7]] == "X" && board[win_position_3[8]] == "X"
-    "X won in the bottom row"
+    "X"
   elsif board[win_position_4[0]] == "X" && board[win_position_4[3]] == "X" && board[win_position_4[6]] == "X"
-    "X won in the left column"
+    "X"
   elsif board[win_position_5[1]] == "X" && board[win_position_5[4]] == "X" && board[win_position_5[7]] == "X"
-    "X won in the middle column"
+    "X"
   elsif board[win_position_6[2]] == "X" && board[win_position_6[5]] == "X" && board[win_position_6[8]] == "X"
-    "X won in the right column"
+    "X"
   elsif board[win_position_7[0]] == "X" && board[win_position_7[4]] == "X" && board[win_position_7[8]] == "X"
-    "X won diagonally left  to right"
+   "X"
   elsif board[win_position_8[2]] == "X" && board[win_position_8[4]] == "X" && board[win_position_8[6]] == "X"
-    "X won diagonally right to left"
+    "X"
   elsif board[win_position_1[0]] == "O" && board[win_position_1[1]] == "O" && board[win_position_1[2]] == "O"
-    "O won in the top row"
+    "O"
   elsif board[win_position_2[3]] == "O" && board[win_position_2[4]] == "O" && board[win_position_2[5]] == "O"
-    "O won in the middle row"
+    "O"
   elsif board[win_position_3[6]] == "O" && board[win_position_3[7]] == "O" && board[win_position_3[8]] == "O"
-    "O won in the bottom row"
+    "O"
   elsif board[win_position_4[0]] == "O" && board[win_position_4[3]] == "O" && board[win_position_4[6]] == "O"
-    "O won in the left column"
+    "O"
   elsif board[win_position_5[1]] == "O" && board[win_position_5[4]] == "O" && board[win_position_5[7]] == "O"
-    "O won in the middle column"
+    "O"
   elsif board[win_position_6[2]] == "O" && board[win_position_6[5]] == "O" && board[win_position_6[8]] == "O"
-    "O won in the right column"
+    "O"
   elsif board[win_position_7[0]] == "O" && board[win_position_7[4]] == "O" && board[win_position_7[8]] == "O"
-    "O won diagonally left  to right"
+    "O"
   elsif board[win_position_8[2]] == "O" && board[win_position_8[4]] == "O" && board[win_position_8[6]] == "O"
-    "O won diagonally right to left"
+    "O"
   else
     nil
   end
-end
-
-def full?(board)
-
-end
-
-def draw?(board)
-
-end
-
-def over?(board)
-
-end
-
-def winner(board)
-
+=end
 end
