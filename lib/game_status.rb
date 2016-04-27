@@ -19,7 +19,7 @@ def won?(board)
 
     if $x_won_condition || $o_won_condition
       return win_combination
-    elsif board.all?{|i| i == " "} || (board.none?{|i| i == " "} && !$won_condition)
+    elsif board.all?{|i| i == " "} || (board.none?{|i| i == " "})
       return false
     else
       false
@@ -28,7 +28,7 @@ end
 end
 
 def full?(board)
-  if position_taken?
+  if board.all?{|i| (i == "X") || (i == "O")}
     true
   else 
     false
