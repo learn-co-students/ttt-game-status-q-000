@@ -52,10 +52,8 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) && $o_won_condition
-    "O"
-  elsif won?(board) && $x_won_condition
-    "X"
+  if the_winner_combo = won?(board)
+    board[the_winner_combo.first]
   end
 end
 
