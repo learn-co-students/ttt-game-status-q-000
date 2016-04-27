@@ -10,7 +10,6 @@ end
                       [0,4,8],[2,4,6]]
 def won?(board)
 a = 0
-
   WIN_COMBINATIONS.each do |win_combination|
   win_index_1 = win_combination[0]
   win_index_2 = win_combination[1]
@@ -26,7 +25,6 @@ a = 0
     false
     else
     false
-
       end
   end
 
@@ -36,7 +34,6 @@ a = 0
     false
     else return a
   end
-
 end
 
 def full? (board)
@@ -70,7 +67,6 @@ elsif won?(board).all? {|index| board[index] == "X"}
  return "X"
   elsif won?(board).all? {|index| board[index] == "O"}
  return "O"
-
 end
 end
 
