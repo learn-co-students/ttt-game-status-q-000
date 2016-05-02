@@ -4,26 +4,40 @@ def position_taken?(board, location)
 end
 
 # Define your WIN_COMBINATIONS constant
-  WIN_COMBINATIONS = [#indexes that compose top row win
-  [0,1,2], # top row
-  [3,4,5], # middle row
-  [6,7,8], # bottom row
-  [0,4,8], # diagonal 
-  [2,4,6], # diagonal 
-  [0,3,6], # left vertical
-  [1,4,7], # middle vertical
-  [2,5,8], # right vertical 
+ WIN_COMBINATIONS = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [6,4,2]
 ]
 
-  
+# Define won?, full?, draw?, over?, and winner below
+def won?(board)
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
+  end
+end
 
-#def full?
+def full?(board)
+  board.all?{|token| token == "X" || token == "O"}
+end
 
+def draw?(board)
+  full?(board) && !won?(board)
+end
 
-#def draw?
+def over?(board)
+  won?(board) || full?(board)
+end
 
-
-#def over?
-
-
-#def winner
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
+end
