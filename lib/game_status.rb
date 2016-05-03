@@ -78,12 +78,13 @@ def winner(board)
     board[winner]
  else
  	nil
- end
-
- 
+ end 
 end
 
- 
+ def play
+   
+ end
+
 
 
 
