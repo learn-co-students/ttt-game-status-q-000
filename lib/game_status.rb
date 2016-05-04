@@ -29,3 +29,33 @@ def won?(board)
 	end
 	return false
 end
+
+def full?(board)
+	board.all? do |pos|
+		pos == "X" || pos == "O"
+	end
+end
+
+def draw?(board)
+	if !won?(board) && full?(board)
+		true
+	else
+		false
+	end
+end
+
+def over?(board)
+	if won?(board) || full?(board) || draw?(board)
+		true
+	else false
+	end
+end
+
+def winner(board)
+	token_array = []
+	if won?(board)
+		token_array = won?(board)
+		token = token_array[0]
+		return board[token]
+	end
+end
