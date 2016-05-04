@@ -37,14 +37,21 @@ def winner(board)
 end
 
 def won?(board)
-  if full?(board)
+  if !full?(board)
     return false
-  wins = 0
-  WIN_COMBINATIONS.each do |win_combination|
-    if win_combination.all? {|location| board[location] == "X"} || win_combination.all? {|location| board[location] == "Y"}
-      wins += 1
+  else
+    wins = []
+    WIN_COMBINATIONS.each do |win_combination|
+      if win_combination.all? {|location| board[location] == "X"}
+        wins << win_combination
+      elsif win_combination.all? {|location| board[location] == "Y"}
+        wins << win_combination
+      end
+    end
+    if wins.size > 0
+      return wins[0]
+    end
   end
-  wins >= 0
 end
 
 <<-DOC
