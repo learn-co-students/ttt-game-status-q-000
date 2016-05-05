@@ -1,4 +1,14 @@
 # Helper Method
+def turn_count(board)
+  turns = 0;
+  ![0,1,2,3,4,5,6,7,8].each do |pos|
+    if position_taken?(board,pos)
+      turns+=1;
+    end
+  end
+  turns;
+end
+
 def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
 end
