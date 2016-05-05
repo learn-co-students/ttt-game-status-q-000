@@ -17,11 +17,10 @@ WIN_COMBINATIONS=[
 
 def won?(board)
   if WIN_COMBINATIONS.include?("X") || WIN_COMBINATIONS.include?("O")
-    return true
+    return WIN_COMBINATIONS
   else
     return false
   end
-
 end
 #
 # def full?()
