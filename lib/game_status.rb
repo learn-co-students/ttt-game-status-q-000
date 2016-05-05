@@ -25,7 +25,8 @@ def won?(board)
   end
 
 def full?(board)
-  board.all? {|i| board == "X"} || board.all? {|i| board == "O"}
+  #board.all? {|i| i == "X"} || == "O"}
+  !board.any? {|i| i == " "}
 end
 #true if board not won & full,
 #false if board not won and not full
@@ -35,5 +36,19 @@ def draw?(board)
     return true
   else
     return false
+  end
+end
+#true if won, draw or full.
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+    return true
+  end
+end
+
+def winner(board)
+  if won?(board)
+    won?(board).each do |each|
+      return board[each]
+    end
   end
 end
