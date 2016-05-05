@@ -16,23 +16,45 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |win_combo|
-    win_index_1 = win_combo[0]
-    win_index_2 = win_combo[1]
-    win_index_3 = win_combo[2]
-
-    if board[win_index_1] == "X" && board[win_index_2] == "X" && board[win_index_3] == "X"
-      win_combo
-    elsif
-       if board[win_index_1] == "O" && board[win_index_2] == "O" && board[win_index_3] == "O"
-      win_combo
-    else
-      false
-    end
-  end
+  WIN_COMBINATIONS.select do |win_combo|
+   (board[win_combo[0]] == "X" && board[win_combo[1]] == "X" && board[win_combo[2]] == "X") || (board[win_combo[0]] == "O" && board[win_combo[1]] == "O" && board[win_combo[2]] == "O")
+  end.flatten!
 end
 
 def full?(board)
   !(board.include?(" "))
 end
 
+def draw?(board)
+  if won?(board) == nil && full?(board) == true
+    true
+  else
+    false
+  end
+end
+
+def over?(board)
+  if won?(board) == true || draw?(board) == true || full?(board) == true
+    true
+  else
+    false
+  end
+end
+
+def winner(board)
+  if won?(board) == nil
+    nil
+  else
+    winning_board = won?(board)
+    winning_move_1 = winning_board[0]
+    winning_move_2 = winning_board[1]
+    winning_move_3 = winning_board[2]
+      if board[winning_move_1] == "X" && board[winning_move_2] == "X" && board[winning_move_3] == "X"
+        "X"
+      elsif board[winning_move_1] == "O" && board[winning_move_2] == "O" && board[winning_move_3] == "O"
+        "O"
+      else
+        nil
+      end
+  end
+end
