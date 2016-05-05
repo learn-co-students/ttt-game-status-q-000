@@ -17,9 +17,16 @@ WIN_COMBINATIONS=[
 
 def won?(board)
   if WIN_COMBINATIONS.include?("X") || WIN_COMBINATIONS.include?("O")
-    return WIN_COMBINATIONS
+    return board[WIN_COMBINATIONS]
   else
     return false
+  end
+  board.select do | matches |
+    matches.select do | more_matches |
+    if more_matches.include?("X") || more_matches.include?("O")
+      return board[more_matches]
+    end
+  end
   end
 end
 #
