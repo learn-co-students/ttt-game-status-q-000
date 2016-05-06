@@ -2,6 +2,11 @@
 def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
 end
+#  0 | 1 | 2
+# -----------
+#  3 | 4 | 5
+# -----------
+#  6 | 7 | 8
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS=[
@@ -15,33 +20,48 @@ WIN_COMBINATIONS=[
                   [6,4,2]
 ]
 
+
+# board = ["X", "O", "X", "O", "X", "O", "X", "X", "O"]
+
 def won?(board)
-  if WIN_COMBINATIONS.include?("X") || WIN_COMBINATIONS.include?("O")
-    return board[WIN_COMBINATIONS]
-  else
-    return false
-  end
-  board.select do | matches |
-    matches.select do | more_matches |
-    if more_matches.include?("X") || more_matches.include?("O")
-      return board[more_matches]
+  WIN_COMBINATIONS.detect do | win_combination |
+    # win_combination = [0,1,2], [3,4,5], [0,4,8], ... [2,4,6]
+
+    win_index_1 = win_combination[0] # 0, 3
+    win_index_2 = win_combination[1] # 1, 4
+    win_index_3 = win_combination[2] # 2, 5
+
+    position_1 = board[win_index_1] # "X", "O"
+    position_2 = board[win_index_2] # "O", "X"
+    position_3 = board[win_index_3] # "X", "O"
+
+    if position_1 ==  position_2 && position_2 ==  position_3 && position_1 != " "
+      return win_combination # return the win_combination indexes that won.
+    else
+      false
     end
   end
+end
+
+def full?(board)
+  board.none? do | position |
+    position == " "
   end
 end
-#
-# def full?()
-#
-# end
-#
-# def draw?()
-#
-# end
-#
-# def over?()
-#
-# end
-#
-# def winner?()
-#
-# end
+
+def draw?(board)
+  !won?(board) && full?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board)
+end
+
+def winner(board)
+  win_combination = won?(board)
+
+  if win_combination
+    win_index = win_combination[0]
+    board[win_index] 
+  end
+end
