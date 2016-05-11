@@ -3,7 +3,7 @@ def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
 end
 
-# Define your WIN_COMBINATIONS constant
+# Define your WIN_COMBINATIONS constant with arrays for each win combination
 WIN_COMBINATIONS = [
     [ 0, 1, 2],
     [ 3, 4, 5],
@@ -43,7 +43,8 @@ end
 
 # full?
 def full?(board)
-    # return true if all the spaces on the board has either "X" or "O" in it
+    # return true if all spaces on the board has either "X" or "O" in it
+    # resulting in a draw 
     board.all? {|space| space == "X" || space == "O"}
 end
 
