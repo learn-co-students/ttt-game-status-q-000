@@ -75,8 +75,9 @@ end
 def winner(board)
     # the winning combination won on the board
     win_combination = won?(board)
-    # if the game is won, return the token ("X" or "O") 
-    # indicated by the first move on the board
+    # if the game is won as indicated by the winning combination, 
+    # return the token ("X" or "O") indicated by the 0 array index
+    # of the combination that won on the board
     if win_combination
         return board[win_combination[0]]
     end
