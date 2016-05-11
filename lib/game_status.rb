@@ -55,17 +55,18 @@ def over?(board)
   end
 end
 def winner(board)
-
-   if draw?(board)==true
-    	return false
-   end
-	win_combination= won?(board)
-	win_token = win_combination[0]
-	check= board[win_token]
-  if check=="X"
-    return "X"
-  elsif check=="O"
-    return "O"
-  end
+	if won?(board)
+	   if draw?(board)
+	    	return false
+	   end
+		win_combination= won?(board)
+		win_token = win_combination[0]
+		check= board[win_token]
+	  if check=="X"
+	    return "X"
+	  elsif check=="O"
+	    return "O"
+	  end
+	 end
 
 end
