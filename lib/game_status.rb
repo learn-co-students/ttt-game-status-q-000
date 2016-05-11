@@ -63,10 +63,11 @@ end
 
 # over?
 def over?(board)
-    # returns true if the board has been done, is a draw, or is full
+    # returns true if the board has been won, is a draw, or is full
     if won?(board) || draw?(board) || full?(board)
         return true
     else
+     # return false if the game is not over  
         return false
     end
 end
