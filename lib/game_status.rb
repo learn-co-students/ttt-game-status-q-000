@@ -34,14 +34,25 @@ end
 
 #full board
 def full?(board)
-  #draw
+  #draw and in progress
   WIN_COMBINATIONS.all? do |location|
-    board[location[0]] && board[location[1]] && board[location[2]]
+    board[location[0]] != " " && board[location[1]] != " " && board[location[2]]  != " "
   end
+end
 
-  #in progress
-  WIN_COMBINATIONS.none? do |location|
-    board[location[0]] && board[location[1]] && board[location[2]]
-  end
+def draw?(board)
+  full?(board) && !won?(board)
+end
 
+def over?(board)
+  draw?(board) || won?(board)
+end
+
+def winner(board)
+  won?(board)
+    if board.count("X") > board.count("O")
+      return "X"
+    elsif board.count("X") < board.count("O")
+      return "O"
+    end
 end
