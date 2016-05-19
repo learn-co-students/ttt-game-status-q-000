@@ -57,11 +57,6 @@ def over?(board)
 end
 
 def winner(board)
-  WIN_COMBINATIONS.each do |win_combo|
-    if win_combo.all? { |x| x == "X" }
-       return "X"
-    elsif win_combo.all? { |x| x == "O" }
-      return "O"
-    end
-    end
+  win = won?(board)
+  return win[0]
 end
