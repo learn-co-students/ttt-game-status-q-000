@@ -31,10 +31,17 @@ def won? (board)
 end
 
 def full? (board)
-board.any? {|i| i == " "}
-    return false
-  else
-    return true
+	if board.any? {|i| i == " " ||  i == ""}
+      return false
+    else
+      return true
+    end
+  end
+
+  def draw? (board)
+    if full? (board) == true && won? (board) == false
+      return true
+    end
 end
 
 
