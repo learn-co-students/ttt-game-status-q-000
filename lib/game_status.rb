@@ -38,12 +38,33 @@ def full? (board)
     end
   end
 
-  def draw? (board)
-    if full? (board) == true && won? (board) == false
+def draw? (board)
+    if full?(board) == true && won?(board) == false
       return true
     end
 end
 
+def over?(board)
+
+  if draw?(board) == true || full?(board) == true || won?(board) == true
+    return true
+  end
+end
+
+def winner(board)
+  WIN_COMBINATIONS.each do |combo|
+
+    position1 = board[combo[0]]
+    position2 = board[combo[1]]
+    position3 = board[combo[2]]
+    if (position1 == "O" && position2 == "O" && position3 == "O") == true
+    return "O"
+  elsif (position1 == "X" && position2 == "X" && position3 == "X") == true
+    return "X"
+  end
+  end
+  nil
+end
 
 
 
