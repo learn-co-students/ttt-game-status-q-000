@@ -24,7 +24,7 @@ def over?(board)
 end
 
 def winner(board)
-    board[won?(board).detect {|i| i }]
+    board[won?(board).detect {|i| i}] if won?(board)
 end
 
 def draw?(board)
