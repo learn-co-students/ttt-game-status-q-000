@@ -66,22 +66,9 @@ end
 
 def winner(board)
   token = won?(board)
-  puts token
-  puts token == false
   if token == false
     return nil
   else
-    puts token
-    puts "yay"
-    puts board[token[0]]
     return board[token[0]]
   end
-end
-
-board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
-token2 = winner(board)
-if token2 == nil
-  puts "yay nil"
-else
-  puts "boo"
 end
