@@ -63,17 +63,17 @@ end #=> false
 all_odd #=> false
 
 #none?
-[1,3].none?{|i| i.even?} #=> true
+[1,3].none?{|i| i.even?} #=> true. none in the array are even
 
 #any?
-[1,2,100].any?{|i| i > 99} #=> true
+[1,2,100].any?{|i| i > 99} #=> true. 100 is greater than 99, and is in the array.
 
 #include?
 the_numbers = [4,8,15,16,23,42]
-the_numbers.include?(42)   #=> true
+the_numbers.include?(42)   #=> true. the array includes 42
 the_numbers.include?(6)   #=> false
 
-#each
+#appending
 matches = []
 [1,2,3,4,5].each do |i|
   matches << i if i.even? # add i to the matches array if it is even
