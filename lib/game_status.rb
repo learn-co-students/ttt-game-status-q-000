@@ -15,14 +15,30 @@ WIN_COMBINATIONS = [
 [6,4,2]
 ]
 
+# Define won?, full?, draw?, over?, and winner below
 def won?(board)
-  tests = WIN_COMBINATIONS
-  token = "X"
-  tests.each do |i|
-    if tests[i][0] == token && tests[i][1] == token && tests[i][2] == token
-      return tests[i]
-    end
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
   end
 end
 
+def full?(board)
+  board.all?{|token| token == "X" || token == "O"}
+end
+
+def draw?(board)
+  full?(board) && !won?(board)
+end
+
+def over?(board)
+  won?(board) || full?(board)
+end
+
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
+end
 
