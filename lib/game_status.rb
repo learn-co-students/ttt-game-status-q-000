@@ -40,6 +40,8 @@ end
 def draw?(board)
   if !won?(board) && full?(board)
     return true
+  elsif !won?(board) && board.count("X") == board.count("O")
+    return true
   else
     return false
   end
@@ -52,12 +54,11 @@ def over?(board)
 end
 
 def winner(board)
-  won_index = won?(board)
-  number = won_index[0]
-
   if draw?(board) == true
     return nil
   else draw?(board) == false
+    won_index = won?(board)
+    number = won_index[0]
     if board[number] == "X"
       return "X"
     else board[number] == "O"
