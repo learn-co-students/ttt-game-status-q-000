@@ -27,7 +27,6 @@ def won?(board)
       end
     end
     return false
-  end
 end
 
 def full?(board)
@@ -61,13 +60,15 @@ def over?(board)
 end
 
 def winner(board)
-  winning_array = won?(board)
-  winning_index = winning_array[0]
-  if board[winning_index] == "X"
-    return "X"
-  elsif board[winning_index] == "O"
-    return "O"
+  if !won?(board)
+    return nil
   else
-    return false
+    winning_array = won?(board)
+    winning_index = winning_array[0]
+    if board[winning_index] == "X"
+      return "X"
+    else
+      return "O"
+    end
   end
 end
