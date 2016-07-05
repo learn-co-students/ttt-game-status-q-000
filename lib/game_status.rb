@@ -26,7 +26,6 @@ def won?(board)
         return win_combination
       end
     end
-  if pass == nil
     return false
   end
 end
