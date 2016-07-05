@@ -26,9 +26,9 @@ def won?(board)
         return win_combination
       end
     end
-    if pass = nil
-      return false
-    end
+  if pass == nil
+    return false
+  end
 end
 
 def full?(board)
@@ -46,9 +46,29 @@ def full?(board)
 end
 
 def draw?(board)
-  if won?(board) == false && full?(board) == true
+  if !won?(board)
     return true
   elsif (won?(board) == false && full?(board) == false) || won?(board) ==  true
     return false
+  end
+end
+
+def over?(board)
+  if full?(board) == false
+    return false
+  elsif won?(board) == true || full?(board) == true || draw?(board) == true
+    return true
+  end
+end
+
+def winner(board)
+  winning_array = won?(board)
+  winning_index = winning_array[0]
+  if board[winning_index] == "X"
+    return "X"
+  elsif board[winning_index] == "O"
+    return "O"
+  else
+    return nil
   end
 end
