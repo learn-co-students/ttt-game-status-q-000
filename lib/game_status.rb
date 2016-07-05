@@ -16,25 +16,24 @@ end
 ]
 
 def won?(board)
-    WIN_COMBINATIONS.each do |combo|
+  if WIN_COMBINATIONS.each do |combo|
 
-      combo_index_1 = combo[0]
-      combo_index_2 = combo[1]
-      combo_index_3 = combo[2]
+    combo_index_1 = combo[0]
+    combo_index_2 = combo[1]
+    combo_index_3 = combo[2]
 
-      win_position_1 = board[combo_index_1]
-      win_position_2 = board[combo_index_2]
-      win_position_3 = board[combo_index_3]
+    win_position_1 = board[combo_index_1]
+    win_position_2 = board[combo_index_2]
+    win_position_3 = board[combo_index_3]
 
-      if win_position_1 == "X" && win_position_2 == "X" && win_position_3 == "X"
-        return combo
-      elsif win_position_1 == "O" && win_position_2 == "O" && win_position_3 == "O"
-        return combo
-      elsif board.all? { |i| i == " " }
-        return false
-      elsif board.all? { |i| i != " "}
-        return false
+    if win_position_1 == "X" && win_position_2 == "X" && win_position_3 == "X"
+      return combo
+    elsif win_position_1 == "O" && win_position_2 == "O" && win_position_3 == "O"
+      return combo
     end
+  end
+  else
+    return false
   end
 end
 
@@ -47,7 +46,7 @@ def full?(board)
 end
 
 def draw?(board)
-  if full?(board) == true && won?(board) == false
+  if full?(board) == true && !won?(board)
     return true
   else
     return false
@@ -55,15 +54,15 @@ def draw?(board)
 end
 
 def over?(board)
-  if won?(board) == true
+  if draw?(board) == true || won?(board)
     return true
+  else
+    return false
   end
 end
 
 def winner(board)
-   if board.any?{|i| i == 3}
-     return i
-   else
-     return nil
+   if win_combo = won?(board)
+     board[win_combo.first]
    end
 end
