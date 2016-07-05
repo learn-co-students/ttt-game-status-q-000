@@ -17,14 +17,38 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |win_combination|
-    index_1 = win_combination[0]
-    index_2 = win_combination[1]
-    index_3 = win_combination[2]
-    if (board[index_1] == "X" && board[index_2] == "X" && board[index_3] == "X") || (board[index_1] == "O" && board[index_2] == "O" && board[index_3] == "O")
-      return win_combination
-    else
+  pass =
+    WIN_COMBINATIONS.each do |win_combination|
+      index_1 = win_combination[0]
+      index_2 = win_combination[1]
+      index_3 = win_combination[2]
+      if (board[index_1] == "X" && board[index_2] == "X" && board[index_3] == "X") || (board[index_1] == "O" && board[index_2] == "O" && board[index_3] == "O")
+        return win_combination
+      end
+    end
+    if pass = nil
       return false
     end
+end
+
+def full?(board)
+  counter = 0
+  board.each do |value|
+    if value == "X" || value == "O"
+      counter += 1
+    end
+  end
+  if counter == 9
+    return true
+  else
+    return false
+  end
+end
+
+def draw?(board)
+  if won?(board) == false && full?(board) == true
+    return true
+  elsif (won?(board) == false && full?(board) == false) || won?(board) ==  true
+    return false
   end
 end
