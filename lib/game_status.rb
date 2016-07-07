@@ -22,3 +22,15 @@ def won?(board)
     position_taken?(board, win_combo[0])
   end
 end
+
+def full?(board)
+end
+
+def draw?(board)
+end
+
+def over?(board)
+end
+
+def winner(board)
+end
