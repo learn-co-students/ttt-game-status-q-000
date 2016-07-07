@@ -24,9 +24,19 @@ def won?(board)
 end
 
 def full?(board)
+  if board.include?(" ")
+    false
+  else
+    true
+  end
 end
 
 def draw?(board)
+  if board.full?(board) && (board.won?(board) == false)
+    true
+  else
+    false
+  end
 end
 
 def over?(board)
