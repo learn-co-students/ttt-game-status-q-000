@@ -14,3 +14,15 @@ WIN_COMBINATIONS = [
   [0,4,8],
   [2,4,6],
 ]
+
+def won?(board)
+  WIN_COMBINATIONS.each do |combinations|
+  puts  combinations == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+          return false
+        combinations == ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+          return false
+
+        combinations == ["X", "X", "X", " ", " ", " ", " ", " ", " "]
+          return (012).to_ary
+    end
+end
