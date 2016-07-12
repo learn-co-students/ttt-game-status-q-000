@@ -1,15 +1,14 @@
 # Helper Method
 
 def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
+  !board[index].nil? && board[index] != " " && board[index]!=""
 end
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[6,4,2]]
 
 def full?(board)
-  board.none?{|i| i==" " || i=="
-    " }
+  board.none?{|i| i==" " || i=="" }
 end
 
 def draw?(board)
@@ -21,19 +20,15 @@ def over?(board)
 end
 
 def won?(board)
-  board.all? do |i|
-     if i=="X"||i=="O"
-    else return false
+  #puts WIN_COMBINATIONS[1][0]+", "+WIN_COMBINATIONS[1][1]]+", "+WIN_COMBINATIONS[1][2]]
+  for i in 0..WIN_COMBINATIONS.size-1 do
+    if board[WIN_COMBINATIONS[i][0]] == board[WIN_COMBINATIONS[i][1]] &&
+      board[WIN_COMBINATIONS[i][0]] == board[WIN_COMBINATIONS[i][2]] &&
+      position_taken?(board, WIN_COMBINATIONS[i][0])
+          return [WIN_COMBINATIONS[i][0],WIN_COMBINATIONS[i][1],WIN_COMBINATIONS[i][2]]
     end
-    for i in 0..WIN_COMBINATIONS.size-1
-      if board[WIN_COMBINATIONS[i][0]] == board[WIN_COMBINATIONS[i][1]] &&
-         board[WIN_COMBINATIONS[i][0]] == board[WIN_COMBINATIONS[i][2]] &&
-          (board[WIN_COMBINATIONS[i][0]] == "O" || board[WIN_COMBINATIONS[i][0]] == "X")
-        return [WIN_COMBINATIONS[i][0],WIN_COMBINATIONS[i][1],WIN_COMBINATIONS[i][2]]
-      end
-    end
-end
-  false
+  end
+ return false
 end
 
 def winner(board)
@@ -43,6 +38,3 @@ def winner(board)
   end
   nil
 end
-
-board = [" ", " ", " ", "X", "X", "X", " ", " ", " "]
-puts won?(board)
