@@ -24,23 +24,19 @@ def won?(board)
 end
 
 def full?(board)
-  if board.include?(" ")
-    false
-  else
-    true
-  end
+  board.all? {|character| character == "X" || character == "O"}
 end
 
 def draw?(board)
-  if board.full?(board) && (board.won?(board) == false)
-    true
-  else
-    false
-  end
+  full?(board) && !won?(board)
 end
 
 def over?(board)
+  won?(board) || full?(board)
 end
 
 def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
 end
