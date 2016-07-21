@@ -1,0 +1,73 @@
+# Helper Method
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+# Define your WIN_COMBINATIONS constant
+WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[6,4,2]]
+def won?(board)
+  playerx=Array.new(9," ")
+  counter=[0,1,2,3,4,5,6,7,8]
+  counter.each do |count|
+    if board[count]=="X"
+      playerx[count]=count
+    end
+  end
+  playero=Array.new(9," ")
+  counter=[0,1,2,3,4,5,6,7,8]
+  counter.each do |count|
+    if board[count]=="O"
+      playero[count]=count
+    end
+  end
+  puts "player x #{playerx}"
+  puts "player o #{playero}"
+  counter=[0,1,2,3,4,5,6,7]
+  counter.each do |count|
+    wincombo=WIN_COMBINATIONS[count] #array
+    wintrack=[0,1,2,3,4,5,6,7]
+    wintrack[count]=wincombo.all? do |number|
+      playerx.include?(wincombo[number])
+    end
+    return wintrack
+    puts "wintrack is #{wintrack}"
+  end
+  puts "wintrack is #{wintrack}"
+  return wintrack
+end
+
+board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+won?(board)
+puts "wintrack is #{wintrack}"
+
+
+
+__END__
+
+  count=0
+  winat=Array.new(9," ")
+  WIN_COMBINATIONS.each do |win|
+    win.select do |number|
+      playerx.include? number
+    end
+  end
+end
+
+
+win=[0,4,2].all? do |number|
+  playerx.include? number
+end
+puts "win is #{win}"
+end
+if win==[6,7,8]
+  wina=count
+end
+count=count+1
+puts "wina is #{wina}"
+end
+end
+#win=win.all? do |number|
+#  playerx.include? number
+
+WIN_COMBINATIONS.each do |win|
+  path_win=conditions
