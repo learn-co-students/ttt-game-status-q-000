@@ -23,25 +23,30 @@ while count<WIN_COMBINATIONS.length
   winner1 =  WIN_COMBINATIONS[count].all?{|c| board[c] == "X"}
   winner2 = WIN_COMBINATIONS[count].all?{|c| board[c] == "O"}
   if winner1==true||winner2==true
-    WIN_COMBINATIONS[count]
+  return  WIN_COMBINATIONS[count]
   else
     false
 end
 count+=1
 end
 end
+
 def full?(board)
   board.all?{|el| el=="X"||el=="O"}
 end
+
 def draw?(board)
   if(won?(board)==false&&full?(board)==true)
-true
-elsif(won?(board)==false&&full?(board)!=true)
+ true
+end
+if(won?(board)==false&&full?(board)==false)
   false
-else
+end
+if(won?(board)!=false)
   false
 end
 end
+
 def over?(board)
   if(won?(board)!=false||draw?(board)==true||full?(board)==true)
 true
