@@ -18,18 +18,16 @@ WIN_COMBINATIONS=[
 def won?(board)
 board.all?{|p| p!=""||p!=" "}
 count=0
-x=0
-while count<WIN_COMBINATIONS.length
-      wincom = WIN_COMBINATIONS[count]
-    winner1 = wincom.all?{|i| i == "X"}
-    winner2 = wincom.all?{|i| i == "O"}
-    if winner1 == true||winner2 == true
-      return  wincom.to_a
 
-              else
-        false
-        end
-    count+=1
+while count<WIN_COMBINATIONS.length
+  winner1 =  WIN_COMBINATIONS[count].all?{|c| board[c] == "X"}
+  winner2 = WIN_COMBINATIONS[count].all?{|c| board[c] == "O"}
+  if winner1==true||winner2==true
+    WIN_COMBINATIONS[count]
+  else
+    false
+end
+count+=1
 end
 end
 def full?(board)
