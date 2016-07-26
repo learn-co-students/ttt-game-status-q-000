@@ -67,8 +67,6 @@ if(w1>w2)
   return "X"
 else
   return "O"
-endif(won?(board)==false)
-  return nil
 end
 if(won?(board)==false)
   return false
