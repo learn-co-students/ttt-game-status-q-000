@@ -56,6 +56,9 @@ def winner(board)
 count=0
 w1=0
 w2=0
+if(!won?(board))
+  return nil
+end
 
 while count<board.length
   if(board[count]=="X")
@@ -69,9 +72,6 @@ if(w1>w2)
   return "X"
 else
   return "O"
-end
-if(won?(board)==false)
-  return false
 end
 
 end
