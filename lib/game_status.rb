@@ -17,6 +17,29 @@ WIN_COMBINATIONS = [
 
 def won?(board)
 	WIN_COMBINATIONS.detect do |win_combination|
-		board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X"
+		board[win_combination[0]] ==  board[win_combination[1]] &&
+		board[win_combination[1]] ==  board[win_combination[2]] &&
+		position_taken?(board, win_combination[0])
+	end
+end
+
+def full?(board)
+	board.none? do |spot|
+		spot == ' '
+	end
+end
+
+def draw?(board)
+	full?(board) && !won?(board)
+end
+
+def over?(board)
+	won?(board) || full?(board) || draw?(board)
+end
+
+def winner(board)
+	if over?(board)
+		win_combo = won?(board)
+		return board[win_combo[0]]
 	end
 end
