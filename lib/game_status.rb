@@ -28,9 +28,11 @@ end
 					end
 					
 					WIN_COMBINATIONS.each do |i|
-						win_index_1 = WIN_COMBINATIONS[i][0].to_i
-						win_index_2 = WIN_COMBINATIONS[i][1].to_i
-						win_index_3 = WIN_COMBINATIONS[i][2].to_i
+						win_combination = WIN_COMBINATIONS[i]
+						
+						win_index_1 = win_combination[0]
+						win_index_2 = win_combination[1]
+						win_index_3 = win_combination[2]
 						
 						position_1 = board[win_index_1] 
 						position_2 = board[win_index_2] 
@@ -38,7 +40,7 @@ end
 
 						if position_1 == "X" && position_2 == "X" && position_3 == "X" ||
 						    position_1 == "O" && position_2 == "O" && position_3 == "O"
-							return WIN_COMBINATIONS[i]
+							return win_combination
 							 else
 								 false
 						 end
