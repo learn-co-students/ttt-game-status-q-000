@@ -15,36 +15,21 @@ end
 	[ 2, 5, 8 ]
 			   ]
 				def won?(board) #inside def you wana go thru details of the array
-					i = 0
-				win_combination = Array.new(3, 0)
+					win_combination = WIN_COMBINATIONS.find { |combo| board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X" || board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O"}
 				
-					board.all? do |i| # check if there are empty spaces or nil in board.
-						if( i == " " || i=="" || i==nil)
-							return false
+				end
+						
+
+					def full?(board)
+					full = nil
+						while( full != true)
+							full = board.all? { |i| board[i.to_i] == "X" || board[i.to_i] == "O" } #Return true for full board
+
+							 full = board.include? :board == " " || :board == nil 			#Return false for in-game progress
+								if( full == true )
+									return true
 								else 
-									true
+									return false
+							end
 						end
 					end
-			
-						while( i < 8 ) #while i has not reached the end of array WIN_COMBINATIONS insert each possibility in a single array to use to compare
-			
-							win_combination[0] = WIN_COMBINATIONS[i][0]
-							win_combination[1] = WIN_COMBINATIONS[i][1]
-							win_combination[2] = WIN_COMBINATIONS[i][2]
-							
-							win_index_1 = win_combination[0] #need indexes for board array, so I assign variables from arrays
-							win_index_2 = win_combination[1]
-							win_index_3 = win_combination[2]
-								
-							position_1 = board[win_index_1] #here's the index being assigned to variable to be compared to X's and O's below
-							position_2 = board[win_index_2] 
-							position_3 = board[win_index_3]
-								
-								  if position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O"
-									i+=1
-									return win_combination 
-										else
-											i+=1
-								end							
-						end	
-				end
