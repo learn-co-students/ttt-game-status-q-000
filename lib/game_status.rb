@@ -24,16 +24,12 @@ end
 	end
 
 	def draw?(board)
-		draw = Array.new(2)
-		draw[0]=won?(board)
-		draw[1]=full?(board)
-
 		
-		if(draw[0] == true)
+		if(won?(board) == true)
 			return false
-		elsif(draw[0] == false && draw[1] == true)
+		elsif(won?(board) == false && full?(board) == true)
 			return true
-		elsif(draw[0] == false && draw[1] == false)
+		elsif(won?(board) == false && full?(board) == false)
 			return false
 		end
 
