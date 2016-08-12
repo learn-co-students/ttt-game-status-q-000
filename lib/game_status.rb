@@ -40,7 +40,7 @@ end
 
 def winner(board)
   board_return = won?(board)
-  puts board_return.inspect
+  #puts board_return.inspect
   if board_return.class == Array
     if board[board_return[0]] == "X"
       return "X"
