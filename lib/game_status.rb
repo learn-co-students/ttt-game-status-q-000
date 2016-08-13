@@ -24,12 +24,20 @@ def won?(board)
     position_1 = board[win_index_1] # load the value of the board at win_index_1
     position_2 = board[win_index_2] # load the value of the board at win_index_2
     position_3 = board[win_index_3] # load the value of the board at win_index_3
+    winner = []
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
+      winner = win_combination
       return win_combination # return the win_combination indexes that won.
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+      winner = win_combination
       return win_combination
-    else
-      return false
     end
   end
+  if winner.empty?
+    return false
+  end
 end
+
+#def full?(board)
+#  board.each do
+#end
