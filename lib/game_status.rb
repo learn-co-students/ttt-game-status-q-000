@@ -17,27 +17,44 @@ WIN_COMBINATIONS = [
 
 #define a method to check for winning combinations
 def won?(board)
+  win_combo = nil
   WIN_COMBINATIONS.each do |win_combination|
-    win_index_1 = win_combination[0]
-    win_index_2 = win_combination[1]
-    win_index_3 = win_combination[2]
-    position_1 = board[win_index_1] # load the value of the board at win_index_1
-    position_2 = board[win_index_2] # load the value of the board at win_index_2
-    position_3 = board[win_index_3] # load the value of the board at win_index_3
-    winner = []
+#    win_index_1 = win_combination[0] alternative method to do using variable assign
+#    win_index_2 = win_combination[1]
+#    win_index_3 = win_combination[2]
+    position_1 = board[win_combination[0]] # load the value of the board at win_index_1
+    position_2 = board[win_combination[1]] # load the value of the board at win_index_2
+    position_3 = board[win_combination[2]] # load the value of the board at win_index_3
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
-      winner = win_combination
-      return win_combination # return the win_combination indexes that won.
+      win_combo = win_combination # return the win_combination indexes that won.
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-      winner = win_combination
-      return win_combination
+      win_combo = win_combination
     end
   end
-  if winner.empty?
-    return false
+  win_combo
+end
+
+def full?(board)
+  board.all? {|x| x != " "}
+end
+
+def draw?(board)
+  if won?(board) == nil && full?(board) == true
+    return true
   end
 end
 
-#def full?(board)
-#  board.each do
-#end
+def over?(board)
+  if won?(board) != nil || draw?(board) == true || full?(board) == true
+    return true
+  end
+end
+
+def winner(board)
+  token = nil
+  if won?(board) != nil
+    win_combo = won?(board)
+    token = board[win_combo[0]]
+  end
+  token
+end
