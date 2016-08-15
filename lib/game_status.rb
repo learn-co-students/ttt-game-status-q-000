@@ -18,11 +18,21 @@ end
 				    win_combination = WIN_COMBINATIONS.find { |combo| board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X" || board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O"}
 	end
 						
-
 	def full?(board)
 		board.all? { |position| position == "X" || position == "O" } #Return true for full board	
 	end
 
 	def draw?(board)
 		!won?(board) && full?(board) ? true : false
+	end
+	
+	def over?(board)
+		won?(board) || full?(board) || draw?(board) ? true : false
+	end
+
+	def winner(board)
+		combo = won?(board)
+
+		combo != nil ? board[combo[0]] : nil
+		
 	end
