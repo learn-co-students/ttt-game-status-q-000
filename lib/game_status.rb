@@ -24,6 +24,7 @@ def won?(board)
   return false
 end
 
+#ternary syntax
 def full?(board)
   board.all? {|full| full != " "} ? true : false
 end
@@ -45,12 +46,12 @@ def over?(board)
 end
 
 def winner(board)
+  return nil if !won?(board)
+
   position = won?(board)[0]
     if board[position] == "X"
       return "X"
     elsif board[position] == "O"
       return "O"
-    elsif won?(board) != true
-      return nil
   end
 end
