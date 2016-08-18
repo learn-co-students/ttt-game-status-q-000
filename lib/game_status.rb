@@ -45,11 +45,12 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) == true && board[] == "X"
-    return "X"
-  elsif won?(board) == true && board[] == "O"
-    return "O"
-  else
-    return nil
+  position = won?(board)[0]
+    if board[position] == "X"
+      return "X"
+    elsif board[position] == "O"
+      return "O"
+    elsif won?(board) != true
+      return nil
   end
 end
