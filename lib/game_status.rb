@@ -16,56 +16,31 @@ WIN_COMBINATIONS = [
                   ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |combo|
-    win_index_1 = combo[0]
-    win_index_2 = combo[1]
-    win_index_3 = combo[2]
+  WIN_COMBINATIONS.detect do |combo|
+    win_index_1, win_index_2, win_index_3 = combo
 
     position_1 = board[win_index_1]
     position_2 = board[win_index_2]
     position_3 = board[win_index_3]
 
-    if(position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O")
-      return combo
-    end
+    (position_1 == position_2 && position_2 == position_3 && position_1 != " ")
   end
-  return false
 end
 
 def full?(board)
-  board.each do |element|
-    if(element == " ")
-      return false
-    end
-  end
-  return true
+  board.all? {|element| element != " "}
 end
 
 def draw?(board)
-  if full?(board) && !won?(board)
-    return true
-  else
-    return false
-  end
+  full?(board) && !won?(board)
 end
 
 def over?(board)
-  if draw?(board) || won?(board)
-    return true
-  else
-    return false
-  end
+  draw?(board) || won?(board)
 end
 
 def winner(board)
-  if won?(board)
-    win_arr = won?(board)[0]
-    return board[win_arr]
-  else
-    puts !!won?(board)
-    return nil
-  end
-end
+  result = won?(board)  
 
-board = ["X", " ", " ", " ", "X", " ", " ", " ", " "]
-print winner(board)
+  result.nil? ? result : board[result[0]] 
+end
