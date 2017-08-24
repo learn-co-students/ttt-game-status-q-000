@@ -3,3 +3,5 @@ tags:
 languages:
   - language1
 resources: 0
+
+board[winning_array[0]] == "X"
