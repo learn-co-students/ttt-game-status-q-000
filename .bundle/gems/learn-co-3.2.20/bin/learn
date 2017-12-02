@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'learn'
+
+NON_PRE_CONFIG_COMMANDS = [
+  'reset', 'whoami', 'directory', 'help', 'version', '--version', '-v', 'doctor', 'new', 'hello', 'lint', 'save'
+]
+
+INTERNET_REQUIRED_COMMANDS = [
+  'whoami', 'doctor', 'directory', 'reset', 'hello'
+]
+
+LEARN_CONFIG_COMMANDS = ['reset', 'whoami', 'directory']
+
+if ['-v', '--version'].include?(ARGV.first)
+  puts Learn::VERSION
+  exit
+end
+
+Learn::OptionsSanitizer.new(ARGV).sanitize!
+
+# Legacy: leaving this in just in case we do decide to return to our previously
+#         extra-defensive auth checking
+# if !(NON_PRE_CONFIG_COMMANDS.include?(ARGV[0]))
+  # system('learn-config') unless Learn::InternetConnection.no_internet_connection?
+# end
+
+netrc = Learn::NetrcInteractor.new
+netrc.read
+token = netrc.password
+
+if !LEARN_CONFIG_COMMANDS.include?(ARGV[0]) && (token.nil? || token == 'machine' || !File.exist?(File.expand_path('~/.learn-config')))
+  system('learn-config') unless Learn::InternetConnection.no_internet_connection?
+end
+
+if INTERNET_REQUIRED_COMMANDS.include?(ARGV[0])
+  Learn::InternetConnection.test_connection
+end
+
+Learn::CLI.start(ARGV)

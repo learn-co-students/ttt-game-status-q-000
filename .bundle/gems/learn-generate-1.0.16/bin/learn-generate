@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'learn_generate'
+
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.on('--list', 'List known templates') do |l|
+    options[:list] = true
+  end
+
+  opts.on('--internet', 'Perform actions with an internet connection') do |i|
+    options[:internet] = true
+  end
+end.parse!
+
+template_loader = LearnGenerate::TemplateLoader.new(options[:internet])
+known_templates = template_loader.templates
+templates_list  = template_loader.printable_list
+
+my_banner = <<-EOS
+
+  Usage: learn new <lab-name> -t <template-name>
+
+  Available templates:
+
+  #{templates_list}
+EOS
+
+if options[:list]
+  puts <<-EOS
+  Available templates:
+
+  #{templates_list}
+  EOS
+elsif !ARGV[0] || !ARGV[1]
+  puts my_banner
+elsif !known_templates.include?(ARGV[0])
+  puts my_banner
+else
+  if !File.exists?(ARGV[1])
+    LearnGenerate::TemplateMaker.run(ARGV[0], ARGV[1])
+  else
+    puts "#{ARGV[1]} already exists in this directory. Please specify a new lab name."
+  end
+end

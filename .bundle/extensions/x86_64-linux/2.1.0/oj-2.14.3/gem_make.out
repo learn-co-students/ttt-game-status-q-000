@@ -1,0 +1,31 @@
+/usr/local/opt/rbenv/versions/2.1.5/bin/ruby -r ./siteconf20160122-18204-hhpoi4.rb extconf.rb
+>>>>> Creating Makefile for ruby version 2.1.5 on x86_64-linux <<<<<
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling circarray.c
+compiling oj.c
+compiling hash_test.c
+compiling resolve.c
+compiling dump.c
+compiling hash.c
+compiling err.c
+compiling cache8.c
+compiling saj.c
+compiling compat.c
+compiling reader.c
+compiling object.c
+compiling odd.c
+compiling scp.c
+compiling strict.c
+compiling parse.c
+compiling sparse.c
+compiling fast.c
+compiling val_stack.c
+linking shared-object oj/oj.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 oj.so ./.gem.20160122-18204-1ibpfzx/oj
+installing default oj libraries
