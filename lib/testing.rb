@@ -1,6 +1,6 @@
 # Helper Method
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
+def position_taken?(board, location)
+  !(board[location].nil? || board[location] == " ")
 end
 
 # Define your WIN_COMBINATIONS constant
@@ -43,7 +43,10 @@ end
 
 def winner(board)
   if won?(board)
-    return board[won?(board)[0]]
+    puts board[won?(board)[0]]
   end
 end
+
+
+puts winner(["O", " ", " ", " ", "O", " ", " ", " ", "O"])
 
