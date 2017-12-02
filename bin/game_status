@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/game_status.rb'
+
+puts "#{won?([" ", " ", "X", " ", "X", " ", "X", " ", " "])}, expect [2,4,6]"
+puts "#{won?([" ", " ", "O", " ", "X", " ", "X", " ", " "])}, expect []"
+puts "#{won?([" ", "X", " ", " ", "X", " ", "X", " ", " "])}, expect []"
+puts "#{won?(["O", "X", "O", "O", "X", "O", "X", "O", "X"])}, expect []"
+puts "#{won?(["X", " ", " ", "X", " ", " ", "X", " ", " "])}, expect [0,3,6]"
+puts "#{won?(["O", " ", " ", "O", " ", " ", "O", " ", " "])}, expect [0,3,6]"
+puts "#{won?(["X", "X", "X", " ", " ", " ", " ", " ", " "])}, expect [0,1,2]"
+puts "#{won?(["O", "O", "O", " ", " ", " ", " ", " ", " "])}, expect [0,1,2]"
+
+puts "#{winner(["O", "O", "O", " ", " ", " ", " ", " ", " "])}, expect O"
+puts "#{winner(["X", " ", " ", " ", "X", " ", " ", " ", "X"])}, expect X"
+
+# puts ["X", " ", " ", "X", " ", " ", "X", " ", " "].length
