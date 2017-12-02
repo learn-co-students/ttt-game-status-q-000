@@ -144,23 +144,43 @@ describe "./lib/game_status.rb" do
     end
   end
 
-  describe '#winner' do
+  describe '#cats_game?' do
+    it 'returns true for a cats game' do
+      board = ["X", "O", "X", "O", "O", "X", " ", "X", "O"]
+
+      expect(cats_game?(board)).to be_truthy
+    end
+
+    it 'returns false for a won game' do
+      board = [" ", "O", "X", "O", "X", "X", "O", "O", "X"]
+
+      expect(cats_game?(board)).to be_falsey
+    end
+
+    it 'returns false for an in-progress game' do
+      board = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
+
+      expect(cats_game?(board)).to be_falsey
+    end
+  end
+
+  describe '#winner?' do
     it 'return X when X won' do
       board = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
 
-      expect(winner(board)).to eq("X")
+      expect(winner?(board)).to eq("X")
     end
 
     it 'returns O when O won' do
       board = ["X", "O", " ", " ", "O", " ", " ", "O", "X"]
 
-      expect(winner(board)).to eq("O")
+      expect(winner?(board)).to eq("O")
     end
 
     it 'returns nil when no winner' do
       board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
 
-      expect(winner(board)).to be_nil
+      expect(winner?(board)).to be_nil
     end
   end
 end
