@@ -19,9 +19,9 @@
 
   def won?(board)
     WIN_COMBINATIONS.each do |win|
-      if board[win[0]] != " " && board[win[0]] == board[win[1]] && board[win[1]] == board[win[2]] 
+      if board[win[0]] != " " && board[win[0]] == board[win[1]] && board[win[1]] == board[win[2]]
        return win
-  end
+      end
     end
     false
   end
@@ -32,19 +32,25 @@
         return false
       end
     end
-    else return true
   end
 
   def draw?(board)
-    if board == ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-      return true
-    else
+    board.each do |position|
+      if won?(board) == false && full?(board)
+        return true
+      else
       return false
+      end
     end
   end
 
   def over?(board)
-    if full?(board) == true
+      if board == full?(board)
+      return true
+    elsif
+      board == won?(board)
+      return true
+    elsif board == draw?(board)
       return true
     else
     return false
