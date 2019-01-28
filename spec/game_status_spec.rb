@@ -17,62 +17,62 @@ describe "./lib/game_status.rb" do
   end
 
   describe "#won?" do
-    it 'returns false for an empty board' do
+    it 'returns falsey for an empty board' do
       board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
       expect(won?(board)).to be_falsey
     end
 
-    it 'returns false for a draw' do
+    it 'returns falsey for a draw' do
       board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
 
       expect(won?(board)).to be_falsey
     end
 
     it 'returns an array of matching indexes for a top row win' do
-      board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
+      board = ["X", "X", "X", "O", "O", " ", " ", " ", " "]
 
       expect(won?(board)).to match_array([0,1,2])
     end
 
     it 'returns an array of matching indexes for a middle row win' do
-      board = [" ", " ", " ", "X", "X", "X", " ", " ", " "]
+      board = ["O", "O", " ", "X", "X", "X", " ", " ", " "]
 
       expect(won?(board)).to match_array([3,4,5])
     end
 
     it 'returns an array of matching indexes for a bottom row win' do
-      board = [" ", " ", " ", " ", " ", " ", "X", "X", "X"]
+      board = [" ", " ", " ", "O", "O", " ", "X", "X", "X"]
 
       expect(won?(board)).to match_array([6,7,8])
     end
 
     it 'returns an array of matching indexes for a left column win' do
-      board = ["O", " ", " ", "O", " ", " ", "O", " ", " "]
+      board = ["O", " ", "X", "O", " ", "X", "O", " ", " "]
 
       expect(won?(board)).to match_array([0,3,6])
     end
 
     it 'returns an array of matching indexes for a middle column win' do
-      board = [" ", "O", " ", " ", "O", " ", " ", "O", " "]
+      board = ["X", "O", " ", "X", "O", " ", " ", "O", " "]
 
       expect(won?(board)).to match_array([1,4,7])
     end
 
     it 'returns an array of matching indexes for a right column win' do
-      board = [" ", " ", "O", " ", " ", "O", " ", " ", "O"]
+      board = ["X", " ", "O", "X", " ", "O", " ", " ", "O"]
 
       expect(won?(board)).to match_array([2,5,8])
     end
 
     it 'returns an array of matching indexes for a left diagonal win' do
-      board = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
+      board = ["X", " ", "O", " ", "X", "O", " ", " ", "X"]
 
       expect(won?(board)).to match_array([0,4,8])
     end
 
     it 'returns an array of matching indexes for a right diagonal win' do
-      board = [" ", " ", "O", " ", "O", " ", "O", " ", " "]
+      board = ["X", " ", "O", "X", "O", " ", "O", " ", " "]
 
       expect(won?(board)).to match_array([2,4,6])
     end
@@ -99,7 +99,13 @@ describe "./lib/game_status.rb" do
       expect(draw?(board)).to be_truthy
     end
 
-    it 'returns false for a won game' do
+    it 'returns false for a game won in the first row' do
+      board = ["X", "X", "X", "O", "X", "O", "O", "O", "X"]
+
+      expect(draw?(board)).to be_falsey
+    end
+
+    it 'returns false for a won game diagonaly' do
       board = ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
 
       expect(draw?(board)).to be_falsey
@@ -119,8 +125,14 @@ describe "./lib/game_status.rb" do
       expect(over?(board)).to be_truthy
     end
 
-    it 'returns true for a won game' do
+    it 'returns true for a won game when the board is full' do
       board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
+
+      expect(over?(board)).to be_truthy
+    end
+
+    it 'returns true for a won game when the board is not full' do
+      board = ["X", " ", " ", "O", "O", "O", "X", "X", " "]
 
       expect(over?(board)).to be_truthy
     end
