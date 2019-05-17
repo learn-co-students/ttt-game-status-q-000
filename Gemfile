@@ -5,4 +5,4 @@ source "https://rubygems.org"
 
 gem 'rspec'
     gem 'pry'
-    gem 'learn-co', '~> 1.0', '>= 1.0.4'
+    gem 'learn-co'

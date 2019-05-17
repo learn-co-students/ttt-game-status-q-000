@@ -53,7 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  learn-co (~> 1.0, >= 1.0.4)
+  learn-co
   pry
   rspec
 
