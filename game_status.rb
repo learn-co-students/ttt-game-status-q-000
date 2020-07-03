@@ -1,6 +1,6 @@
 # Helper Method
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
+def position_taken?(board, location)
+  !(board[location].nil? || board[location] == " ")
 end
 
 # Define your WIN_COMBINATIONS constant
