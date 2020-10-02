@@ -1,4 +1,4 @@
-# Tic Tac Toe Game Status
+# Tic Tac Toe Amazing Game
 
 ## Objectives
 
