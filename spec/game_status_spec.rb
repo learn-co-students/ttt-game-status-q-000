@@ -47,6 +47,12 @@ describe "./lib/game_status.rb" do
       expect(won?(board)).to match_array([6,7,8])
     end
 
+#     it 'returns an array of matching indexes for a win combination with non contributing move(s) on board' do
+#       board = ["X", " ", " ", " ", " ", " ", "X", "X", "X"]
+
+#       expect(won?(board)).to match_array([6,7,8])
+#     end
+
     it 'returns an array of matching indexes for a left column win' do
       board = ["O", " ", "X", "O", " ", "X", "O", " ", " "]
 
