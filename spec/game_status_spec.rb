@@ -1,4 +1,4 @@
-require_relative '../lib/game_status.rb'
+require_relative '../lib/game_status'
 
 describe "./lib/game_status.rb" do
   describe 'WIN_COMBINATIONS' do
